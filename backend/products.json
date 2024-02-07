@@ -1,0 +1,62 @@
+[
+  {
+    "Product": "bread",
+    "Cost": "12",
+    "Category": "Groceries",
+    "User": "jeremy",
+    "ListID": {
+      "CurrentList": "All"
+    }
+  },
+  {
+    "Product": "Bread",
+    "Cost": "12",
+    "Category": "Groceries",
+    "User": "jeremy",
+    "ListID": {
+      "CurrentList": "All"
+    }
+  },
+  {
+    "Product": "IceCream",
+    "Cost": "12",
+    "Category": "Groceries",
+    "User": "jeremy",
+    "ListID": "All"
+  },
+  {
+    "Product": "IceCream",
+    "Cost": "12",
+    "Category": "Groceries",
+    "User": "Jeremy1",
+    "ListID": "All"
+  },
+  {
+    "Product": "Gas",
+    "Cost": "80",
+    "Category": "Gas",
+    "User": "Jeremy1",
+    "ListID": "All"
+  },
+  {
+    "Product": "Gas",
+    "Cost": "80",
+    "Category": "Gas",
+    "User": "Jeremy1",
+    "ListID": "Other Things"
+  },
+  {
+    "Product": "this",
+    "Cost": "50",
+    "Category": "Gas",
+    "User": "Jeremy",
+    "ListID": "Things"
+  },
+  {
+    "Product": "Cheveron",
+    "Cost": "100",
+    "Category": "Gas",
+    "User": "Jeremy",
+    "ListID": "Things"
+  }
+]

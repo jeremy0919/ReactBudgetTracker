@@ -1,0 +1,26 @@
+[
+  {
+    "UserName": "Jeremy1",
+    "Password": "1234",
+    "Email": "jeremy1",
+    "Language": "English",
+    "Budget": "3000",
+    "list": [
+      "All",
+      "things",
+      "Other Things"
+    ]
+  },
+  {
+    "UserName": "Jeremy",
+    "Password": "1234",
+    "Email": "jerry",
+    "Language": "English",
+    "Budget": "2000",
+    "list": [
+      "All",
+      "Things",
+      "NewThings"
+    ]
+  }
+]
