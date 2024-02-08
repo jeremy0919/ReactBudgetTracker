@@ -14,7 +14,7 @@ function SideBarLeft() {
     const Button2 = () => {
       updateAccountInfo({Budget:newBudget})
       const obj= {
-        username: cookies.UserData,
+        GUID: cookies.UserData,
         budget:newBudget
       }
       HandleServer(obj,"Update Budget")
@@ -26,7 +26,7 @@ function SideBarLeft() {
     };
     const Button4 = () => {
       const obj= {
-        username: cookies.UserData,
+        GUID: cookies.UserData,
         NewList:newList
       }
       
@@ -35,7 +35,7 @@ function SideBarLeft() {
   useEffect(() => {
     const fetchData = async () => {
         try {
-            const obj = { username: cookies.UserData }; // Assuming UserData contains the username
+            const obj = { GUID: cookies.UserData }; // Assuming UserData contains the username
             const temp = await HandleServer(obj, "Lists");
             console.log(temp.data)
             Updt(temp.data);

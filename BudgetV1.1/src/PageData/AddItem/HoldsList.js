@@ -12,7 +12,7 @@ function HoldsList(props) {
       Product: props.props.Product,
       Cost: props.props.Cost,
       Category: props.props.Category,
-      User: cookies.UserData,
+      GUID: cookies.UserData,
       ListID: CurrentList
     }
     HandleServer(obj,'Add Item')

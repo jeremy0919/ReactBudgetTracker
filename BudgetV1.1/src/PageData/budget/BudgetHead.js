@@ -14,7 +14,7 @@ function BudgetHead() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const obj = { username: cookie.UserData };
+                const obj = { GUID: cookie.UserData };
                 const temp = await HandleServer(obj, "Get Budget");
                 setBudget(temp.data);
              

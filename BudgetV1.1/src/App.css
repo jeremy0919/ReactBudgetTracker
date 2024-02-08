@@ -104,14 +104,14 @@ button:hover .Span {
 	column-rule: 4px dotted turquoise;
 	border-radius: 0.5rem;
 }
-.Title {
-  color: blue;
-}
-.Title {
-  padding: 20px;
-}
+
+
 
 .inputGroup {
+  display: flex; /* Set the display to flex */
+  flex-direction: row; /* Ensure items are displayed in a row */
+  align-items: center; /* Align items vertically */
+  list-style-type: none;
   margin-bottom: 15px;
 }
 
@@ -123,14 +123,12 @@ button:hover .Span {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 50%; /* Make the input element full width */
-  box-sizing: border-box; /* Include padding and border in the width */
+  box-sizing: border-box;
 }
 
-/* Optionally, you can style the input on focus */
 .inputGroup input:focus {
   outline: none;
-  border-color: #007bff; /* Change border color on focus */
+  border-color: #007bff;
 }
 
 .SideBar {

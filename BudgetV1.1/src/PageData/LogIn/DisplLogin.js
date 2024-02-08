@@ -9,8 +9,8 @@ function DisplLogin() {
   const [passWord, updatePassword] = useState("")
   const {accountInfo, updateAccountInfo} = useAccountContext();
   const {setCurrPage} = usePageContext();
-  const handleSetCookie = () => {
-    setCookie('UserData', useName);
+  const handleSetCookie = (GUID) => {
+    setCookie('UserData', GUID);
   };
  // const [language, updateLanguage] = useState("")
   const haandleSubmit = async (event) =>{
@@ -21,7 +21,7 @@ function DisplLogin() {
     const temp = await HandleServer(obj,"Get User")
     if(temp.status === 201|| temp.status === 200){
       updateAccountInfo({UserName: temp.data.UserName, Email: temp.data.Email, Language: temp.data.Language, Signedin: true, Budget: temp.data.Budget}) 
-      handleSetCookie()
+      handleSetCookie(temp.GUID)
       setCurrPage(1)
       
     }

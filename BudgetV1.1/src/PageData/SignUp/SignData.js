@@ -3,10 +3,11 @@ import { useAccountContext } from '../../Context/AccountInfo';
 import HandleServer from '../../components/HandleServer';
 import { usePageContext } from '../../Context/RenderPage1';
 import { useCookies } from 'react-cookie';
+import { v4 as uuidv4 } from 'uuid';
 function SignData() {
     const [Language, setSelectedOption] = useState('English');
     const [cookies, setCookie, removeCookie] = useCookies(['UserData']);
-
+    const guid = uuidv4();
     const handleDropdownChange = (event) => {
         setSelectedOption(event.target.value);
       };
@@ -16,7 +17,8 @@ function SignData() {
   const [passWord, updatePassword] = useState("")
   const [Email, updateEmail] = useState("")
   const handleSetCookie = () => {
-    setCookie('UserData', useName);
+    setCookie('UserData', guid);
+    setCookie('UserName', useName);
   };
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -25,7 +27,9 @@ function SignData() {
         Password: passWord,
         Email: Email,
         Language: Language,
-        Budget: 0
+        Budget: 0,
+        GUID: guid
+
     };
 
     try {

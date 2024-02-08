@@ -13,7 +13,7 @@ app.use(cors()); // Enable CORS for all routes
 // Create a new product
 app.post('/api/products', async (req, res) => {
   try {
-    const { Product, Cost, Category, User, ListID } = req.body.obj;
+    const { Product, Cost, Category, GUID, ListID } = req.body.obj;
     console.log(req.body)
     // Read existing products from file
     let products = [];
@@ -25,7 +25,7 @@ app.post('/api/products', async (req, res) => {
     }
 
     // Add the new product
-    const newProduct = { Product, Cost, Category, User, ListID };
+    const newProduct = { Product, Cost, Category, GUID, ListID };
     products.push(newProduct);
 
     // Write updated products to file
@@ -40,9 +40,9 @@ app.post('/api/products', async (req, res) => {
 
 app.post('/api/newUser', async (req, res) => {
   try {
-    const { UserName, Password, Email, Language, Budget } = req.body.obj;
+    const { UserName, Password, Email, Language, Budget, GUID } = req.body.obj;
     console.log(req.body);
-    const list = [""]
+    const list = ["All"]
     // Read existing users from file
     let USERS = [];
     try {
@@ -60,7 +60,7 @@ app.post('/api/newUser', async (req, res) => {
     }
 
     // Add the new user
-    const newUser = { UserName, Password, Email, Language, Budget,list };
+    const newUser = { UserName, Password, Email, Language, Budget,list, GUID };
     USERS.push(newUser);
 
     // Write updated users to file
@@ -120,7 +120,7 @@ app.post('/api/updateBudget', async (req, res) => {
 
 app.post('/api/MakeList', async (req, res) => {
   try {
-    const { username, NewList } = req.body.obj;
+    const { GUID, NewList } = req.body.obj;
 
     
     // Read the content of the users.json file
@@ -128,7 +128,7 @@ app.post('/api/MakeList', async (req, res) => {
     const users = JSON.parse(data);
 
     // Find the user with the specified username
-    const userIndex = users.findIndex(user => user.UserName === username);
+    const userIndex = users.findIndex(user => user.GUID === GUID);
     
     if (userIndex !== -1) {
       // Retrieve the current list of the user
@@ -163,7 +163,7 @@ app.post('/api/Getbudget', async (req, res) => {
     const users = JSON.parse(data);
 
     // Find the user with the specified username
-    const userIndex = users.findIndex(user => user.UserName === username);
+    const userIndex = users.findIndex(user => user.GUID === GUID);
 
     if (userIndex !== -1) {
       // Update the budget for the user
@@ -184,9 +184,9 @@ app.post('/api/getUserList', async (req, res) => { // changed from get to post, 
   try {
     const data = await fs.readFile('users.json', 'utf8');
     const USERS = JSON.parse(data);
-    const { username } = req.body.obj;
+    const { GUID } = req.body.obj;
 
-    const foundAccount = USERS.find(user => user.UserName === username);
+    const foundAccount = USERS.find(user => user.GUID === GUID);
     if (foundAccount) {
       return res.status(200).json(foundAccount.list);
     } else {
@@ -234,11 +234,11 @@ app.post('/api/delete', async (req, res) => {
 // Get all products
 app.post('/api/list', async (req, res) => {
   try {
-    const { username, listName} = req.body.obj;// Assuming you're sending the index of the object to delete
+    const { GUID, listName} = req.body.obj;// Assuming you're sending the index of the object to delete
     const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
     
     const products = JSON.parse(data);
-    const filteredProductsByName = products.filter(product => product.User === username);
+    const filteredProductsByName = products.filter(product => product.GUID === GUID);
     if(filteredProductsByName){
     // Check if ListID is provided in the request query
     if (listName === "All") {
@@ -275,12 +275,12 @@ app.get('/api/products', async (req, res) => {
 
 app.post('/api/TotalList', async (req, res) => {
   try {
-    const { username, listName } = req.body.obj;
+    const { GUID, listName } = req.body.obj;
     const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
     const products = JSON.parse(data);
 
-    // Filter products by username
-    const filteredProductsByName = products.filter(product => product.User === username);
+    // Filter products by GUID
+    const filteredProductsByName = products.filter(product => product.GUID === GUID);
 
     if (filteredProductsByName.length > 0) {
       // Check if ListID is provided in the request
@@ -308,12 +308,12 @@ app.post('/api/TotalList', async (req, res) => {
 
 app.post('/api/TotalCategory', async (req, res) => {
   try {
-    const { username, listName } = req.body.obj;
+    const { GUID, listName } = req.body.obj;
     const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
     const products = JSON.parse(data);
     console.log(listName)
     // Filter products by username
-    const filteredProductsByName = products.filter(product => product.User === username);
+    const filteredProductsByName = products.filter(product => product.GUID === GUID);
 
     if (filteredProductsByName.length > 0) {
       // Check if ListID is provided in the request
@@ -336,12 +336,12 @@ app.post('/api/TotalCategory', async (req, res) => {
 });
 app.post('/api/Category', async (req, res) => {
   try {
-    const { username } = req.body.obj;
+    const { GUID } = req.body.obj;
     const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
     const products = JSON.parse(data);
     
     // Filter products by username
-    const filteredProductsByName = products.filter(product => product.User === username);
+    const filteredProductsByName = products.filter(product => product.GUID === GUID);
 
     if (filteredProductsByName.length > 0) {
       // Extract unique categories

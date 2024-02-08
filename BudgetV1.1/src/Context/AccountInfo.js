@@ -4,7 +4,7 @@ import React, { createContext, useState, useContext } from 'react';
 const MyContext = createContext();
 
 export const AccountProvidor = ({ children }) => {
-    const [accountInfo, updateAccountInfo] = useState({UserName: "jeremy", Email:"Unknown", Language:"English", Signedin: true, Budget:1000, CurrentList:"All" });
+    const [accountInfo, updateAccountInfo] = useState({UserName: "jeremy", Email:"Unknown", Language:"English", Signedin: false, Budget:1000, CurrentList:"All" });
 
     return (
         <MyContext.Provider value={{ accountInfo, updateAccountInfo }}>
