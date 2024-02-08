@@ -18,6 +18,25 @@ function Print() {
         setPrintList(ListID.data)
         setCanRender(!canRender);
     };
+    function getCategoryColor(category) {
+        switch (category) {
+          case 'Groceries':
+            return '#2233ff'; // Set the color for Category1
+          case 'Gas':
+            return '#33FF57'; // Set the color for Category2
+          case 'Resteraunts':
+            return '#5733FF'; // Set the color for Category3
+            case 'Clothes':
+                return '#FFFF33'; // Set the color for Category1
+              case 'Supliments':
+                return '#FF33FF'; // Set the color for Category2
+              case 'LivingExpenses':
+                return '#33FFFF'; 
+                
+          default: // other
+            return '#FF5733'; // Default color if category is not specified
+        }
+      }
     useEffect(() => {
         
         const fetchData = async () => {
@@ -44,19 +63,19 @@ function Print() {
 <div>
     <button className='Buttons' onClick={handleClick}> <span className='Span'></span>Print</button>
     {canRender && (
-        
-        <ul className='Title' style={{ listStyleType: 'none' }}> 
-       
-            {printList.map((item, index) => (
-                <li key={index}>
-                    <p>Product: {item.Product}</p>
-                    <p>Cost: {item.Cost}</p>
-                    <p>Category: {item.Category}</p>
-                    <Delete index={index} handleUpdateList={handleClick} />
-                </li>
-            ))}
-        </ul>
-    )}
+  <ul className='PrintList' style={{ listStyleType: 'none' }}> 
+    {printList.map((item, index) => (
+      <li key={index} className='PrintListItem' style={{ backgroundColor: getCategoryColor(item.Category) }}>
+        <p>
+          Product: {item.Product}, 
+          Cost: {item.Cost}, 
+          Category: {item.Category}
+          <Delete index={index} handleUpdateList={handleClick} />
+        </p>
+      </li>
+    ))}
+  </ul>
+)}
 </div>
 
     );

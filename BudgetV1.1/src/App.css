@@ -88,9 +88,17 @@ button:hover .Span {
 .Header {
   color: #DEB992;
 }
+.PrintList {
+  background-color: red;
+  flex-direction: row;
+  list-style-type: none;
+   display: 'flex';
+  flex-Direction: 'row';
+  flex-Wrap: 'wrap' 
+}
 
 .Title {
-  color: black;
+  color: blue;
 }
 .Title {
   padding: 20px;

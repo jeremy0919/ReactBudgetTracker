@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAccountContext } from '../Context/AccountInfo'
 import DrawGraphic from '../DisplayGraphic/DrawGraphic'
-import Bar from '../SideComponents/Bar';
 import GraphicKey from '../DisplayGraphic/GraphicKey';
 import PrintTotal from '../PageData/budget/PrintTotal';
 import { useCookies } from 'react-cookie';
@@ -36,9 +35,7 @@ function UserInfo() {
     }, [cookies.UserData]);     
             return (
               <div>
-                <Bar />
                 <div style={{ padding: '20px' }}> {/* Add padding for better spacing */}
-                  <h2>Account Information</h2>
                   <div style={{ marginBottom: '20px' }}>
                     <p>
                       <strong>UserName:</strong> {cookies.UserData}<br />
