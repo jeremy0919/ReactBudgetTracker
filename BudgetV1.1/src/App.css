@@ -89,14 +89,21 @@ button:hover .Span {
   color: #DEB992;
 }
 .PrintList {
-  background-color: red;
   flex-direction: row;
   list-style-type: none;
    display: 'flex';
   flex-Direction: 'row';
-  flex-Wrap: 'wrap' 
-}
+  flex-Wrap: 'wrap' ;
 
+}
+.PrintListText{
+  padding: 1.5rem 1.5rem 1.5rem 4em;
+	border: 0.3rem solid turquoise;
+	columns: 25rem;
+	column-gap: 7rem;
+	column-rule: 4px dotted turquoise;
+	border-radius: 0.5rem;
+}
 .Title {
   color: blue;
 }

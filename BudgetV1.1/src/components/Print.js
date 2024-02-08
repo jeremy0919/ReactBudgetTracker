@@ -65,12 +65,12 @@ function Print() {
     {canRender && (
   <ul className='PrintList' style={{ listStyleType: 'none' }}> 
     {printList.map((item, index) => (
-      <li key={index} className='PrintListItem' style={{ backgroundColor: getCategoryColor(item.Category) }}>
+      <li key={index} className='PrintListText' style={{ backgroundColor: getCategoryColor(item.Category) }}>
         <p>
           Product: {item.Product}, 
           Cost: {item.Cost}, 
           Category: {item.Category}
-          <Delete index={index} handleUpdateList={handleClick} />
+          <Delete index={index} handleUpdateList={handleClick} style={{justifyContent:"right"}} />
         </p>
       </li>
     ))}

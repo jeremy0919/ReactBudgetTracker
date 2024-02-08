@@ -58,5 +58,26 @@
     "Category": "Gas",
     "User": "Jeremy",
     "ListID": "Things"
+  },
+  {
+    "Product": "Pizza",
+    "Cost": "12",
+    "Category": "Groceries",
+    "User": "Jeremy",
+    "ListID": "All"
+  },
+  {
+    "Product": "icecream",
+    "Cost": "4",
+    "Category": "Groceries",
+    "User": "Jeremy",
+    "ListID": "All"
+  },
+  {
+    "Product": "Creatine",
+    "Cost": "30",
+    "Category": "Suppliments",
+    "User": "Jeremy",
+    "ListID": "All"
   }
 ]

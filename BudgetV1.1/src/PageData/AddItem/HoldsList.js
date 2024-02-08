@@ -16,6 +16,8 @@ function HoldsList(props) {
       ListID: CurrentList
     }
     HandleServer(obj,'Add Item')
+    setIsGraphicVisible(previous => !previous);
+    setIsGraphicVisible(previous => !previous);
   };
   const { setIsGraphicVisible } = useMyContext ();
   const Button2 = () => {
@@ -32,4 +34,4 @@ function HoldsList(props) {
   );
 }
 
-export default React.memo(HoldsList);
+export default HoldsList;
