@@ -1,4 +1,5 @@
 import React from 'react';
+import TrashCan from   "../../images/trashCan.png"
 
 import HandleServer from '../../components/HandleServer';
 function Delete({ index, handleUpdateList }) {
@@ -11,7 +12,8 @@ function Delete({ index, handleUpdateList }) {
 
 
     return (
-        <button onClick={  handleClick }>Delete</button>
+
+        <button onClick={  handleClick }  className='ButtonImage' > <img src={TrashCan} alt="Google" className='ImageButton'/></button>
     );
 }
 

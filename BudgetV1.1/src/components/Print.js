@@ -11,7 +11,7 @@ function Print() {
     console.log(CurrentList)
     const handleClick = async () => {
         const obj = {
-            username:cookies.UserData,
+            GUID:cookies.UserData,
             listName:CurrentList
         }
         const ListID = await HandleServer(obj, "Get List");
@@ -42,7 +42,7 @@ function Print() {
         const fetchData = async () => {
             try {
                 const obj = {
-                    username:cookies.UserData,
+                    GUID:cookies.UserData,
                     listName:CurrentList
                 };
 

@@ -22,7 +22,7 @@ function SideBarLeft() {
     const Button3 = (e) => {
       updateAccountInfo({CurrentList:e.target.value})
       ChangeList(e.target.value)
-      console.log(CurrentList)
+    
     };
     const Button4 = () => {
       const obj= {
@@ -31,6 +31,9 @@ function SideBarLeft() {
       }
       
       HandleServer(obj,"Make List")
+      ChangeList(newList)
+     // Updt(...ListArray, newList)
+     
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -57,7 +60,7 @@ function SideBarLeft() {
            <Button handleClick={Button2}>Change Max Budget</Button>
 
 
-          <p>  Change current List(dropDown)</p>
+          <p>  Change current List </p>
             <select onChange={Button3}>
                     {/* Map over the list names and generate options */}
                     {ListArray.map((ListName, index) => (

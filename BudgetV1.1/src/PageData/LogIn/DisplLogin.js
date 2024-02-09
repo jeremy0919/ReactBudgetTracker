@@ -21,7 +21,7 @@ function DisplLogin() {
     const temp = await HandleServer(obj,"Get User")
     if(temp.status === 201|| temp.status === 200){
       updateAccountInfo({UserName: temp.data.UserName, Email: temp.data.Email, Language: temp.data.Language, Signedin: true, Budget: temp.data.Budget}) 
-      handleSetCookie(temp.GUID)
+      handleSetCookie(temp.data.GUID)
       setCurrPage(1)
       
     }

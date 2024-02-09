@@ -16,7 +16,7 @@ function PageMain({ ComponentToRender, props, LowerGraphics }) {
             <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> {/* 1/8 of the screen for SideBar */}
               <SideBarRight/>
             </div>
-            <div style={{ flex: '6 1 auto', display: 'flex', flexDirection: 'column' }}> {/* This flex container holds DisplLogin and LowerGraphics */}
+            <div style={{ flex: '6 1 auto', display: 'flex', flexDirection: 'column', alignItems:"center", textAlign:"center"}}> {/* This flex container holds DisplLogin and LowerGraphics */}
               <h1>{props}</h1>
               <ComponentToRender/>
               {LowerGraphics && <LowerGraphics/>}

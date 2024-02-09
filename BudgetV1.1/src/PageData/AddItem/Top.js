@@ -5,7 +5,7 @@ import { useListContext } from '../../Context/CurrentList';
 const initial = {
   Product:"",
   Cost:0,
-  Category:""
+  Category:"Groceries" // Starting value
 }
 const categories = ['Groceries', 'Gas', 'Resteraunts', 'Clothes', 'Suppliments', 'LivingExpenses', 'Other'];
 const reducer = (state, action)=>{

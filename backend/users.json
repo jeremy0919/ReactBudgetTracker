@@ -4,9 +4,17 @@
     "Password": "1234",
     "Email": "jerry",
     "Language": "English",
-    "Budget": 0,
-    "list": [
-      "All"
+    "Budget": "200",
+    "list": [ 
+      "All",
+      "things",
+      "things",
+      "newThings",
+      "newThings",
+      null,
+      "duh",
+      "bleh",
+      "d"
     ],
     "GUID": "88d7ab78-e9eb-432f-8d07-20c83fdc9377"
   }

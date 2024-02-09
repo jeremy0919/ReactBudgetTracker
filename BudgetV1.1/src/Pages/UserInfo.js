@@ -15,7 +15,7 @@ function UserInfo() {
         const fetchData = async () => {
             try {
                 const obj = {
-                    username: cookies.UserData,
+                    GUID: cookies.UserData,
                     listName: "All"
                 };
 
@@ -54,7 +54,7 @@ function UserInfo() {
                     <div style={{ flex: '5', display: 'flex', flexDirection: 'column' }}>
                       {renderG && <DrawGraphic list={list} />}
                     </div>
-                    <div style={{ flex: '1', maxWidth: '20%' }}> {/* Adjust widths as necessary */}
+                    <div style={{ flex: '1', maxWidth: '40%' }}> {/* Adjust widths as necessary */}
                     <h3>Money Spent by List</h3>
                     <PrintTotal Server1="Lists" Server2="Total List"/>
                     <h3>Money Spent by Category</h3>

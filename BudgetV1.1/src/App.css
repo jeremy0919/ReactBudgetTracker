@@ -64,7 +64,22 @@
   overflow: hidden;
   z-index: 1; /* Ensure text is above the span */
 }
-
+.ImageButton{
+  width: 100%;
+  height: 100%
+}
+.ButtonImage{
+  width: 3%;
+  height: 3%
+}
+.OtherButtonImage{
+  width:30px;
+  height: 30px;
+}
+.OtherButton{
+  width: 20px;;
+  height: 20px;
+}
 .Span {
   background: #1BA098;
   height: 100%;

@@ -93,13 +93,13 @@ app.post('/api/findUser', async (req, res) => { // changed from get to post, mig
 });
 app.post('/api/updateBudget', async (req, res) => {
   try {
-    const { username, budget } = req.body.obj;
+    const { GUID, budget } = req.body.obj;
     // Read the content of the users.json file
     const data = await fs.readFile('users.json', 'utf8');
     const users = JSON.parse(data);
 
     // Find the user with the specified username
-    const userIndex = users.findIndex(user => user.UserName === username);
+    const userIndex = users.findIndex(user => user.GUID === GUID);
     if (userIndex !== -1) {
       // Update the budget for the user
       users[userIndex].Budget = budget;
@@ -156,7 +156,7 @@ app.post('/api/MakeList', async (req, res) => {
 app.post('/api/Getbudget', async (req, res) => {
   try {
    
-    const { username } = req.body.obj;
+    const { GUID } = req.body.obj;
 
     // Read the content of the users.json file
     const data = await fs.readFile('users.json', 'utf8');

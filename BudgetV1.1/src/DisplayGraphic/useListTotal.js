@@ -9,12 +9,12 @@ function useListTotal(Server1, Server2) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const obj = { username: cookies.UserData };
+                const obj = { GUID: cookies.UserData };
                 const temp1 = await HandleServer(obj, Server1);
                 const totals = await Promise.all(
                     temp1.data.map(async (ListId, index) => {
                         const obj1 = {
-                            username: cookies.UserData,
+                            GUID: cookies.UserData,
                             listName: ListId
                         };
                         const tempTotal = await HandleServer(obj1, Server2);

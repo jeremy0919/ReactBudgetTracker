@@ -27,7 +27,7 @@ function Bottom() {
     
         // Call the async function to fetch data
         fetchData();
-    }, [isGraphicVisible]); // Add dependencies to the useEffect hook
+    }, [isGraphicVisible, cookies.UserData]); // Add dependencies to the useEffect hook
     
     return (
         <div className='Bottom'>
