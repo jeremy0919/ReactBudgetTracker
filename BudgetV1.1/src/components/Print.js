@@ -3,12 +3,14 @@ import Delete from '../PageData/AddItem/Delete';
 import HandleServer from './HandleServer';
 import { useListContext } from '../Context/CurrentList';
 import { useCookies } from 'react-cookie';
+import { useMyContext } from '../Context/context';
 function Print() {
     const [printList, setPrintList] = useState([])
     const [canRender, setCanRender] = useState(false)
     const {CurrentList }= useListContext()
     const [cookies] = useCookies(['UserData']);
-    console.log(CurrentList)
+    const {isGraphicVisible, setIsGraphicVisible}= useMyContext({})
+     console.log(CurrentList)
     const handleClick = async () => {
         const obj = {
             GUID:cookies.UserData,

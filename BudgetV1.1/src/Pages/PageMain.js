@@ -1,10 +1,8 @@
 import React from 'react';
 import { MyProvider } from '../Context/context';
 import Bar from '../SideComponents/Bar';
-import SideBarLeft from '../SideComponents/SideBarLeft';
-import SideBarRight from '../SideComponents/SideBarRight';
-
-function PageMain({ ComponentToRender, props, LowerGraphics }) {
+import SideBar from '../SideComponents/SideBar';
+function PageMain({ ComponentToRender, props, LowerGraphics, BarLeft, BarRight }) {
   return (
     <div>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -14,7 +12,7 @@ function PageMain({ ComponentToRender, props, LowerGraphics }) {
           </div>
           <div style={{ display: 'flex', flex: '1 1 auto' }}> {/* This flex container holds the main content */}
             <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> {/* 1/8 of the screen for SideBar */}
-              <SideBarRight/>
+             {BarRight && <SideBar ComponentToRender1={BarLeft}/>}
             </div>
             <div style={{ flex: '6 1 auto', display: 'flex', flexDirection: 'column', alignItems:"center", textAlign:"center"}}> {/* This flex container holds DisplLogin and LowerGraphics */}
               <h1>{props}</h1>
@@ -22,7 +20,7 @@ function PageMain({ ComponentToRender, props, LowerGraphics }) {
               {LowerGraphics && <LowerGraphics/>}
             </div>
             <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> {/* 1/8 of the screen for SideBar */}
-              <SideBarLeft/>
+              {BarLeft && <SideBar ComponentToRender1 = {BarRight}/>}
             </div>
           </div>
         </MyProvider>

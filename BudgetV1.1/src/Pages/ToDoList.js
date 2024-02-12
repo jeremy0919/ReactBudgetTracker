@@ -19,6 +19,8 @@ function ToDoList() {
             <img src={"facebookLogo"} alt="Facebook" className='ImageButton'/>
           </button>
       </p>
+      <h2>figure out how I want side bar layout</h2>
+      <h3>debate efficiency of sidebar change vs server calls</h3>
     <p>have userInfo display all lists, current budget, overal spending graphic, buttons expand lists beneath them </p>
     <p>change page 1 into a row to add things and drop down for categories, move list drop down from sidebar to there</p>
     <p> see if I can condense side bar into a decent list </p>
