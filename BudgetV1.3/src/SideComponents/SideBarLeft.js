@@ -4,6 +4,7 @@ import { useListContext } from '../Context/CurrentList';
 import { useAccountContext } from '../Context/AccountInfo';
 import { useCookies } from 'react-cookie';
 import HandleServer from '../components/HandleServer';
+import BudgetHead from '../PageData/budget/BudgetHead';
 function SideBarLeft() {
   const {CurrentList, ChangeList} = useListContext();
     const {updateAccountInfo} = useAccountContext()
@@ -53,8 +54,7 @@ function SideBarLeft() {
     <div>
               <div className='SideBar' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}> 
 
-            <p>Budget: </p>
-            <p>Remaining Budget:</p>
+            <BudgetHead></BudgetHead>
           
            <input type="text" onChange={(e)=>changeBudget(e.target.value)}/>
            <Button handleClick={Button2}>Change Max Budget</Button>

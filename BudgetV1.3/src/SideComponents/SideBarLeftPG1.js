@@ -67,10 +67,10 @@ useEffect(() => {
                         </option>
                     ))}
                 </select>
-                
+                <br></br>
               <input type='text' onChange={(e) => changeList(e.target.value)}></input>
             <Button handleClick={Button4}>Create New list</Button>
-        
+                     
            
          
               <button className='Buttons' onClick={Button2}>   <span className='Span'></span>Display Spending Chart</button>

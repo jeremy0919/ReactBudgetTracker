@@ -57,8 +57,6 @@ function BudgetHead() {
             <h2>{budget}</h2>
             <h2>Remaining Budget</h2>
             <h2>{remaining}</h2>
-            <h2>Current List: {CurrentList}</h2>
-            <Print />
         </div>
     );
 }

@@ -20,14 +20,9 @@ function ToDoList() {
           </button>
       </p>
       <h2>figure out how I want side bar layout</h2>
-      <h3>debate efficiency of sidebar change vs server calls</h3>
-    <p>have userInfo display all lists, current budget, overal spending graphic, buttons expand lists beneath them </p>
-    <p>change page 1 into a row to add things and drop down for categories, move list drop down from sidebar to there</p>
-    <p> see if I can condense side bar into a decent list </p>
-      <p>Change page 1s left side bar to the buttons currently pn page 1 </p>
-      <p>Change page 2s left side bar to the add items on page 1 </p>
-      <p>remove page 2s ability to create new list</p>
-      <p>fix draw Graphics</p>
+      <h2>rework delete button and how index works</h2>
+      <h2>create delete button for lists</h2>
+      <p>debate if I want a page 2</p>
       <p>Change print list to be nice </p>
       <p>make things look nice</p>
     
