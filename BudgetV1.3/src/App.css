@@ -1,0 +1,283 @@
+.TopBar {
+  display: flex;
+  background-color: black;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.App {
+  text-align: center;
+  background-color: whitesmoke;
+  font-family: Arial, sans-serif;
+  
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #DEB992;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.Buttons {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #1BA098;
+  background: transparent;
+  color: #DEB992;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensure text is above the span */
+}
+.ImageButton{
+  width: 100%;
+  height: 100%
+}
+.ButtonImage{
+  width: 3%;
+  height: 3%
+}
+.OtherButtonImage{
+  width:30px;
+  height: 30px;
+}
+.OtherButton{
+  width: 20px;;
+  height: 20px;
+}
+.Span {
+  background: #1BA098;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1; /* Set span below the button content */
+  transition: 0.5s;
+}
+
+button:hover .Span {
+  width: 100%;
+}
+
+.Buttons:hover {
+  border: none;
+}
+
+.Header {
+  color: #DEB992;
+}
+.PrintList {
+  flex-direction: row;
+  list-style-type: none;
+   display: 'flex';
+  flex-Direction: 'row';
+  flex-Wrap: 'wrap' ;
+
+}
+.PrintListText{
+  padding: 1.5rem 1.5rem 1.5rem 4em;
+	border: 0.3rem solid turquoise;
+	columns: 25rem;
+	column-gap: 7rem;
+	column-rule: 4px dotted turquoise;
+	border-radius: 0.5rem;
+}
+
+
+
+.inputGroup {
+  display: flex; /* Set the display to flex */
+  flex-direction: row; /* Ensure items are displayed in a row */
+  align-items: center; /* Align items vertically */
+  list-style-type: none;
+  margin-bottom: 15px;
+}
+
+.inputGroup h3 {
+  margin-bottom: 5px;
+}
+
+.inputGroup input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.SideBar {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
+  justify-content: flex-start; /* Align content to the top */
+  font-size: calc(10px + 2vmin);
+  color: #DEB992;
+}
+
+.LogIn {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+padding-top: 25%;
+}
+
+.LogIn label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.LogIn input[type='text'],
+.LogIn input[type='password'] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.LogIn button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.LogIn button:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: Style for error messages */
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.Bottom{
+  margin: 0 auto;
+  flex-direction: horizontal;
+   
+}
+
+.SignUp {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 25%;
+}
+
+.SignUp label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.SignUp input[type='text'],
+.SignUp input[type='password'] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.SignUp button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.SignUp button:hover {
+  background-color: #0056b3;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-form {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.FunctInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.holds-list {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
