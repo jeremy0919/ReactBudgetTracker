@@ -201,9 +201,7 @@ app.post('/api/getUserList', async (req, res) => { // changed from get to post, 
 
 app.post('/api/delete', async (req, res) => {
   try {
-    const { obj } = req.body; // Assuming you're sending the index of the object to delete
-    const index = obj
-    console.log(`obj: ${obj}`);
+    const { GUID, Product, Cost, Category } = req.body.obj;
 
     // Read existing products from file
     let products = [];
@@ -214,8 +212,18 @@ app.post('/api/delete', async (req, res) => {
       console.error('Error reading products file:', error);
     }
 
-    // Delete the object at the specified index
-    if (index >= 0 && index < products.length) {
+    // Find the index of the product to delete
+    const index = products.findIndex((item) => {
+      return (
+        item.GUID === GUID &&
+        item.Product === Product &&
+        item.Cost === Cost &&
+        item.Category === Category
+      );
+    });
+
+    // Delete the object if found
+    if (index !== -1) {
       products.splice(index, 1);
 
       // Write updated products to file
@@ -223,13 +231,54 @@ app.post('/api/delete', async (req, res) => {
 
       res.status(200).json({ message: 'Product deleted successfully' });
     } else {
-      res.status(404).json({ error: 'Index out of range' });
+      res.status(404).json({ error: 'Product not found' });
     }
   } catch (error) {
     console.error('Error deleting product:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.post('/api/DeleteList', async (req, res) => {
+  try {
+    const { GUID, listName } = req.body.obj;
+    console.log(req.body.obj)
+    console.log(listName)
+    // Read existing products from file
+    let users = [];
+    try {
+      const data = await fs.readFile('users.json', 'utf8');
+      users = JSON.parse(data);
+    } catch (error) {
+      console.error('Error reading users file:', error);
+    }
+
+    // Find the user by GUID
+    const userIndex = users.findIndex(item => item.GUID === GUID);
+    console.log(users[userIndex].list);
+    // Delete the value from list if user is found
+    if (userIndex !== -1) {
+      const listIndex = users[userIndex].list.findIndex(item => item === listName);
+      console.log(listIndex)
+      if (listIndex !== -1) {
+        users[userIndex].list.splice(listIndex, 1);
+
+        // Write updated users to file
+        await fs.writeFile('users.json', JSON.stringify(users, null, 2));
+
+        res.status(200).json({ message: 'Value deleted successfully' });
+      } else {
+        res.status(404).json({ error: 'Value not found in list' });
+      }
+    } else {
+      res.status(404).json({ error: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error deleting value:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 
 // Get all products
 app.post('/api/list', async (req, res) => {

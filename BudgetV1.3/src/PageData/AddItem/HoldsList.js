@@ -17,8 +17,8 @@ function HoldsList(props) {
       ListID: CurrentList
     }
     HandleServer(obj,'Add Item')
-    setIsGraphicVisible({Graphic1: previous => !previous});
-    setIsGraphicVisible({Graphic1: previous => !previous});
+    setIsGraphicVisible({Graphic2: previous => !previous});
+    setIsGraphicVisible({Graphic2: previous => !previous});
   };
 
   return (

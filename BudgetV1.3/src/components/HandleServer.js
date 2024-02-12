@@ -26,7 +26,8 @@ function HandleServer(obj, location) {
             return ServerPost(obj, 'api/TotalCategory')
         case "Category Names": 
             return ServerPost(obj, 'api/Category')
-       
+        case "Delete List":
+            return ServerPost(obj, 'api/DeleteList')
         case "Update Budget"://updates a given users budget
            return ServerPost(obj,'api/updateBudget') // obj == username, budget
         case "Get Budget"://returns a given users budget

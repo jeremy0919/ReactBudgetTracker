@@ -14,15 +14,16 @@ function SideBarLeftPG1() {
   const [cookies] = useCookies(['UserData']);
   const Button2 = () => {
     setIsGraphicVisible(previousState => ({
-      ...previousState,
+      Graphic2:false,
       Graphic1: !previousState.Graphic1
     }));
   };
   const Button1 = () => {
     setIsGraphicVisible(previousState => ({
-      ...previousState,
+      Graphic1:false,
       Graphic2: !previousState.Graphic2
     }));
+    
   };
   const Button3 = (e) => {
     updateAccountInfo({CurrentList:e.target.value})

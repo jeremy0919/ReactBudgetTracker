@@ -2,10 +2,9 @@ import React from 'react';
 import TrashCan from   "../../images/trashCan.png"
 
 import HandleServer from '../../components/HandleServer';
-function Delete({ index, handleUpdateList }) {
+function Delete({ obj, handleUpdateList }) {
 
   const handleClick = () => {
-    const obj=index
     HandleServer(obj, 'delete')
     handleUpdateList()
 };

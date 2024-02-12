@@ -4,15 +4,11 @@
     "Password": "1234",
     "Email": "jerry",
     "Language": "English",
-    "Budget": "200",
-    "list": [ 
+    "Budget": "300",
+    "list": [
       "All",
-      "things",
-      "things",
-      "newThings",
       "newThings",
       null,
-      "duh",
       "bleh",
       "d"
     ],

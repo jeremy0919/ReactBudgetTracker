@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Delete from '../PageData/AddItem/Delete';
 import { useMyContext } from '../Context/context';
+import { useCookies } from 'react-cookie';
 function Print2(props) {
     const { setIsGraphicVisible } = useMyContext();
     const printList = props.printList;
+    const [cookies] = useCookies(['UserData']);
     const handleClick = async () => {
         setIsGraphicVisible(previousState => ({
           ...previousState,
@@ -42,7 +44,7 @@ function Print2(props) {
           Product: {item.Product}, 
           Cost: {item.Cost}, 
           Category: {item.Category}
-          <Delete index={index} handleUpdateList={handleClick} style={{justifyContent:"right"}} />
+          <Delete obj = {{GUID: cookies.UserData, Product: item.Product, Cost:item.Cost, Category:item.Category}} handleUpdateList={handleClick} style={{justifyContent:"right"}} />
         </p>
       </li>
     ))}
