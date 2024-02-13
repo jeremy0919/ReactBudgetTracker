@@ -14,6 +14,7 @@ import Bottom from '../bottom/Bottom';
 import SideBarLeft from '../SideComponents/SideBarLeft';
 import SideBarRight from '../SideComponents/SideBarRight';
 import SideBarLeftPG1 from '../SideComponents/SideBarLeftPG1';
+import PageHolderSigned2 from './PageHolderSigned copy';
 
 function MainPage() {
   const { currPage } = usePageContext();
@@ -30,15 +31,7 @@ function MainPage() {
             </div>
             <div style={{ flex: '6 1 auto', display: 'flex', flexDirection: 'column', alignItems:"center", textAlign:"center", maxWidth:'56%'}}> {/* This flex container holds DisplLogin and LowerGraphics */}
             <h1>{`Page: ${currPage}`}</h1>
-            {((currPage === 1) || (currPage ===null)) && <Top/>}
-            {((currPage === 1) || (currPage ===null)) && <Bottom/> }
-            {(currPage === 2)  &&( <BudgetHead/>) }
-            {(currPage === 3)  &&( <DisplLogin/>) }
-            {(currPage === 4)  &&( <UserInfo/>) }
-            {(currPage === 5)  &&( <ToDoList/>) }
-            {(currPage === 6)  &&( <ToDoList/>) }
-            {(currPage === 7)  && <AboutUs Bar = {Bar}/>}
-            {(currPage === 8)  && <AboutUs Bar = {Bar}/>}
+              <PageHolderSigned2/>
     
             </div>
             <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> {/* 1/8 of the screen for SideBar */}
