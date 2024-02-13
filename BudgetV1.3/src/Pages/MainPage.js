@@ -7,7 +7,7 @@ import SideBarLeft from '../SideComponents/SideBarLeft';
 
 import SideBarLeftPG1 from '../SideComponents/SideBarLeftPG1';
 import PageHolderSigned2 from './PageHolderSigned2';
-
+import SideBarRight from '../SideComponents/SideBarRight';
 function MainPage() {
   const { currPage } = usePageContext();
   return (
@@ -27,7 +27,8 @@ function MainPage() {
     
             </div>
             <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> {/* 1/8 of the screen for SideBar */}
-          <SideBar ComponentToRender1 = {SideBarLeft}/>
+{          <SideBar ComponentToRender1 = {SideBarLeft}/> && currPage!==4}
+        {  <SideBar ComponentToRender1 = {SideBarRight}/> && currPage===4}
             </div>
           </div>
         </MyProvider>
