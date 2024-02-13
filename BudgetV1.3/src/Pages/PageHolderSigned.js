@@ -1,24 +1,9 @@
 
-import AboutUs from './AboutUs';
-import { usePageContext } from '../Context/RenderPage1';
-import UserInfo from './UserInfo';
 import { ListProvider } from '../Context/CurrentList';
-import Bar from '../SideComponents/Bar';
-import PageMain from './PageMain';
-import DisplLogin from '../PageData/LogIn/DisplLogin';
-import ToDoList from './ToDoList';
-import Top from '../PageData/AddItem/Top';
-import BudgetHead from '../PageData/budget/BudgetHead';
-import Bottom from '../bottom/Bottom';
-import SignData from '../PageData/SignUp/SignData';
-import LowerGraphics from '../PageData/LogIn/LowerGraphics';
-import SideBarLeft from '../SideComponents/SideBarLeft';
-import SideBarRight from '../SideComponents/SideBarRight';
-import SideBarLeftPG1 from '../SideComponents/SideBarLeftPG1';
+
 import { MyProvider } from '../Context/context';
 import MainPage from './MainPage';
 function PageHolderSigned() {
-  const { currPage } = usePageContext();
   return (
     <div >
       <MyProvider>

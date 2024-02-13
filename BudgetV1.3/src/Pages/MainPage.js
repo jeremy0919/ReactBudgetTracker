@@ -2,19 +2,11 @@ import React from 'react';
 import { MyProvider } from '../Context/context';
 import Bar from '../SideComponents/Bar';
 import SideBar from '../SideComponents/SideBar';
-
-import AboutUs from './AboutUs';
 import { usePageContext } from '../Context/RenderPage1';
-import UserInfo from './UserInfo';
-import DisplLogin from '../PageData/LogIn/DisplLogin';
-import ToDoList from './ToDoList';
-import Top from '../PageData/AddItem/Top';
-import BudgetHead from '../PageData/budget/BudgetHead';
-import Bottom from '../bottom/Bottom';
 import SideBarLeft from '../SideComponents/SideBarLeft';
-import SideBarRight from '../SideComponents/SideBarRight';
+
 import SideBarLeftPG1 from '../SideComponents/SideBarLeftPG1';
-import PageHolderSigned2 from './PageHolderSigned copy';
+import PageHolderSigned2 from './PageHolderSigned2';
 
 function MainPage() {
   const { currPage } = usePageContext();

@@ -10,13 +10,6 @@ import ToDoList from './ToDoList';
 import Top from '../PageData/AddItem/Top';
 import BudgetHead from '../PageData/budget/BudgetHead';
 import Bottom from '../bottom/Bottom';
-import SignData from '../PageData/SignUp/SignData';
-import LowerGraphics from '../PageData/LogIn/LowerGraphics';
-import SideBarLeft from '../SideComponents/SideBarLeft';
-import SideBarRight from '../SideComponents/SideBarRight';
-import SideBarLeftPG1 from '../SideComponents/SideBarLeftPG1';
-import { MyProvider } from '../Context/context';
-import MainPage from './MainPage';
 function PageHolderSigned2() {
   const { currPage } = usePageContext();
   return (

@@ -3,14 +3,11 @@ import Page0 from './Page0'
 import { usePageContext } from '../Context/RenderPage1'
 import SignData from '../PageData/SignUp/SignData';
 import DisplLogin from '../PageData/LogIn/DisplLogin';
-import { useAccountContext } from '../Context/AccountInfo';
 import TopBarUnLogged from '../PageData/LogIn/topBarUnLogged';
 import AboutUs from './AboutUs';
 import OurProduct from './OurProduct';
 function PageHolderUnsigned() {
     const { currPage } = usePageContext();
-    const {accountInfo} = useAccountContext();
-    console.log(accountInfo)
   return (
     <div>
         {(currPage === 9)  && <Page0 ComponentToRender={OurProduct} props={"Our product"}/>}
