@@ -3,8 +3,9 @@ import useListTotal from '../../DisplayGraphic/useListTotal';
 import TrashCan from "../../images/trashCan.png";
 import { useCookies } from 'react-cookie';
 import HandleServer from '../../components/HandleServer';
-
+import { usePageContext } from '../../Context/RenderPage1';
 function PrintTotal(props) {
+  const {currPage, setCurrPage} = usePageContext()  
   const arr = useListTotal(props.Server1, props.Server2);
   const [cookies] = useCookies(['UserData']);
   const handleDeleteItem = (index) => {
@@ -13,7 +14,14 @@ function PrintTotal(props) {
       listName: index
    }
    HandleServer(obj, "Delete List")
- 
+   if(currPage ===6){
+    setCurrPage(4)
+   }
+
+   if(currPage ===4){
+    setCurrPage(6)
+   }
+
   };
 
   return (

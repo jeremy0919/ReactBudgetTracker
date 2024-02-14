@@ -21,7 +21,7 @@ function PageHolderSigned2() {
             {(currPage === 3)  &&( <DisplLogin/>) }
             {(currPage === 4)  &&( <UserInfo/>) }
             {(currPage === 5)  &&( <ToDoList/>) }
-            {(currPage === 6)  &&( <ToDoList/>) }
+            {(currPage === 6)  &&( <UserInfo/>) }
             {(currPage === 7)  && <AboutUs Bar = {Bar}/>}
             {(currPage === 8)  && <AboutUs Bar = {Bar}/>}
   

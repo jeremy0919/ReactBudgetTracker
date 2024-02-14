@@ -34,6 +34,7 @@ function UserInfo() {
         fetchData();
     }, [cookies.UserData]);     
             return (
+            
               <div>
                 <div style={{ padding: '20px' }}> {/* Add padding for better spacing */}
                   <div style={{ marginBottom: '20px' }}>
@@ -64,6 +65,7 @@ function UserInfo() {
                   </div>
                 </div>
               </div>
+            
             );
             
 }
