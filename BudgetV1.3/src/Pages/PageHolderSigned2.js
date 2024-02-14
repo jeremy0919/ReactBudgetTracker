@@ -1,34 +1,45 @@
-
-import AboutUs from './AboutUs';
+import React from 'react';
 import { usePageContext } from '../Context/RenderPage1';
-import UserInfo from './UserInfo';
-import { ListProvider } from '../Context/CurrentList';
-import Bar from '../SideComponents/Bar';
-import PageMain from './PageMain';
-import DisplLogin from '../PageData/LogIn/DisplLogin';
-import ToDoList from './ToDoList';
 import Top from '../PageData/AddItem/Top';
-import BudgetHead from '../PageData/budget/BudgetHead';
 import Bottom from '../bottom/Bottom';
+import BudgetHead from '../PageData/budget/BudgetHead';
+import DisplLogin from '../PageData/LogIn/DisplLogin';
+import UserInfo from './UserInfo';
+import ToDoList from './ToDoList';
+import AboutUs from './AboutUs';
+import Bar from '../SideComponents/Bar';
+
 function PageHolderSigned2() {
   const { currPage } = usePageContext();
-  return (
-    <div >
 
-      {((currPage === 1) || (currPage ===null)) && <Top/>}
-            {((currPage === 1) || (currPage ===null)) && <Bottom/> }
-            {(currPage === 2)  &&( <BudgetHead/>) }
-            {(currPage === 3)  &&( <DisplLogin/>) }
-            {(currPage === 4)  &&( <UserInfo/>) }
-            {(currPage === 5)  &&( <ToDoList/>) }
-            {(currPage === 6)  &&( <UserInfo/>) }
-            {(currPage === 7)  && <AboutUs Bar = {Bar}/>}
-            {(currPage === 8)  && <AboutUs Bar = {Bar}/>}
-  
+  const renderPageContent = () => {
+    switch (currPage) {
+      case 1:
+      case null:
+        return (
+          <>
+            <Top />
+            <Bottom />
+          </>
+        );
+      case 2:
+        return <BudgetHead />;
+      case 3:
+        return <DisplLogin />;
+      case 4:
+      case 6:
+        return <UserInfo />;
+      case 5:
+        return <ToDoList />;
+      case 7:
+      case 8:
+        return <AboutUs Bar={Bar} />;
+      default:
+        return null;
+    }
+  };
 
-    </div>
-  );
+  return <div>{renderPageContent()}</div>;
 }
 
 export default PageHolderSigned2;
-

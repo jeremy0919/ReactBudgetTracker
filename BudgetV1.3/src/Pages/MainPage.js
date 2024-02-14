@@ -22,7 +22,6 @@ function MainPage() {
             <SideBar ComponentToRender1={SideBarLeftPG1}/>
             </div>
             <div style={{ flex: '6 1 auto', display: 'flex', flexDirection: 'column', alignItems:"center", textAlign:"center", maxWidth:'56%'}}> {/* This flex container holds DisplLogin and LowerGraphics */}
-            <h1>{`Page: ${currPage}`}</h1>
               <PageHolderSigned2/>
     
             </div>
