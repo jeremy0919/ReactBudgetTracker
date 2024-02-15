@@ -53,10 +53,10 @@ function BudgetHead() {
 
     return (
         <div>
-            <h1>Current Budget</h1>
-            <h2>{budget}</h2>
-            <h2>Remaining Budget</h2>
-            <h2>{remaining}</h2>
+            <p>Current Budget</p>
+            <p>{budget}</p>
+            <p>Remaining Budget</p>
+            <p>{remaining}</p>
         </div>
     );
 }

@@ -44,7 +44,7 @@ function UserInfo() {
                       <strong>Email:</strong> {accountInfo.Email}
                     </p>
                     <p>Edit Personal Information button</p>
-                    <p>Edit list and budget Information button</p>
+                    
                   </div>
             
                   <h2>Spending</h2>

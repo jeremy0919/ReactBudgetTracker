@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import Button from '../components/Button'
-import { useListContext } from '../Context/CurrentList';
+
 import { useAccountContext } from '../Context/AccountInfo';
 import { useCookies } from 'react-cookie';
 import HandleServer from '../components/HandleServer';
 import BudgetHead from '../PageData/budget/BudgetHead';
 function SideBarLeft() {
-  const {CurrentList, ChangeList} = useListContext();
+
     const {updateAccountInfo} = useAccountContext()
-    const [newList, changeList] = useState()
+
     const [ListArray, Updt] = useState([])
     const [newBudget, changeBudget] = useState()
     const [cookies] = useCookies(['UserData']);
@@ -20,22 +20,7 @@ function SideBarLeft() {
       }
       HandleServer(obj,"Update Budget")
     };
-    const Button3 = (e) => {
-      updateAccountInfo({CurrentList:e.target.value})
-      ChangeList(e.target.value)
-    
-    };
-    const Button4 = () => {
-      const obj= {
-        GUID: cookies.UserData,
-        NewList:newList
-      }
-      
-      HandleServer(obj,"Make List")
-      ChangeList(newList)
-     // Updt(...ListArray, newList)
-     
-  };
+
   useEffect(() => {
     const fetchData = async () => {
         try {
@@ -59,10 +44,10 @@ function SideBarLeft() {
            <input type="text" onChange={(e)=>changeBudget(e.target.value)}/>
            <Button handleClick={Button2}>Change Max Budget</Button>
 
-
+{/*
           <p>  Change current List </p>
             <select onChange={Button3}>
-                    {/* Map over the list names and generate options */}
+                   
                     {ListArray.map((ListName, index) => (
                         <option key={index} value={ListName}>
                             {ListName}
@@ -72,7 +57,7 @@ function SideBarLeft() {
               <input type='text' onChange={(e) => changeList(e.target.value)}></input>
             <Button handleClick={Button4}>Create New list</Button>
         
-           
+                    */}
          
         </div>
     </div>

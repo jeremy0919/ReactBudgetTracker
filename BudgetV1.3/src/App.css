@@ -106,18 +106,22 @@ button:hover .Span {
 .PrintList {
   flex-direction: row;
   list-style-type: none;
-   display: 'flex';
-  flex-Direction: 'row';
-  flex-Wrap: 'wrap' ;
+  display: flex;
+  flex-direction: row;
+  padding-left: 2%;
+  padding-right: 2%;
 }
-.PrintListText{
+
+.PrintListText {
   padding: 1.5rem 1.5rem 1.5rem 4em;
-	border: 0.3rem solid turquoise;
-	columns: 25rem;
-	column-gap: 7rem;
-	column-rule: 4px dotted turquoise;
-	border-radius: 0.5rem;
+  border: 0.3rem solid black;
+
+  columns: 25rem;
+  column-gap: 7rem;
+  column-rule: 4px dotted turquoise;
+  border-radius: 10px; /* Added border-radius to make borders rounded */
 }
+
 
 
 
