@@ -7,7 +7,7 @@ function Tr({ data }) {
   const keys = Object.keys(data).filter(key => key !== 'GUID');
 
   return (
-    <tr>
+    <tr className='TableRow1'>
       {keys.map((key, index) => (
         <Td key={index} cell={data[key]} />
       ))}

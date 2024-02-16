@@ -5,7 +5,7 @@ function Td({ cell }) {
    
   return (
 
-    <td>{cell}</td>
+    <td className='TableCell1'>{cell}</td>
   );
 }
 
