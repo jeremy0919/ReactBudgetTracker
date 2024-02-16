@@ -43,8 +43,8 @@ function UserInfo() {
                       <strong>Language:</strong> {accountInfo.Language}<br />
                       <strong>Email:</strong> {accountInfo.Email}
                     </p>
-                    <p>Edit Personal Information button</p>
-                    
+                    <p>Look at EditPersonalInfo.js</p>
+              
                   </div>
             
                   <h2>Spending</h2>
