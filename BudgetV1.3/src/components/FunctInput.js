@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FunctInput({handleInput, curr}) { // props.children takes the text 
+function FunctInput({handleInput, curr}) { 
 
     
 

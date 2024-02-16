@@ -23,17 +23,15 @@ function Bottom() {
 
     
                 const temp = await HandleServer(obj, "Get List");
-                
-                // Update state with the fetched data
+
                 setList(temp.data);
             } catch (error) {
                 console.error('Error fetching list:', error);
             }
         };
     
-        // Call the async function to fetch data
         fetchData();
-    }, [isGraphicVisible.Graphic1, cookies.UserData, CurrentList, amRendering]); // Add dependencies to the useEffect hook
+    }, [isGraphicVisible.Graphic1, cookies.UserData, CurrentList, amRendering]);
 
 useEffect(() => {
         
@@ -44,17 +42,13 @@ useEffect(() => {
                 listName:CurrentList
             };
 
-
             const ListID = await HandleServer(obj, "Get List");
              setPrintList(ListID.data)
-            
-            // Update state with the fetched data
+       
         } catch (error) {
             console.error('Error fetching list:', error);
         }
     };
-
-    // Call the async function to fetch data
     fetchData();
 },[isGraphicVisible.Graphic2, cookies.UserData, CurrentList, amRendering])
     return (
