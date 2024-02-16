@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useTotal from './total';
-
+import { useRenderContext } from '../Context/ReRenderList';
 function DrawGraphic( list ) {
     const canvasRef = useRef(null);
+    const {amRendering, setAmRendering} = useRenderContext();
     const [hoveredSection, setHoveredSection] = useState(null);
     const disp = ['Groceries', 'Gas', 'Resteraunts', 'Clothes', 'Suppliments', 'LivingExpenses', 'Other'];
     const temp = useTotal(list.list);
@@ -64,7 +65,7 @@ function DrawGraphic( list ) {
         return () => {
             canvas.removeEventListener('mousemove', handleMouseOver);
         };
-    }, [temp]);
+    }, [temp, amRendering]);
     // works need to decide on graphic and what to do with it
     return (
         <div>

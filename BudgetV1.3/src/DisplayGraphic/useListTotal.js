@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import HandleServer from '../components/HandleServer';
 import { useCookies } from 'react-cookie';
-
+import { useRenderContext } from '../Context/ReRenderList';
 function useListTotal(Server1, Server2) {
     const [categoryTotal, setCategoryTotal] = useState([]);
     const [cookies] = useCookies(['UserData']);
-
+    const {amRendering, setAmRendering} = useRenderContext();
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -29,7 +29,7 @@ function useListTotal(Server1, Server2) {
         };
 
         fetchData();
-    }, [Server1, Server2, cookies.UserData]);
+    }, [Server1, Server2, cookies.UserData, amRendering]);
 
     function sum(array) {
         return array.reduce((acc, currentValue) => acc + currentValue, 0);

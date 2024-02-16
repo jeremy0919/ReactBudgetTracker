@@ -1,6 +1,5 @@
 import axios from 'axios';
 async function ServerPost(obj, endPoint) {
-            console.log(`ServerPort:`)
             console.log(obj)
             const temp = `http://localhost:5000/${endPoint}`
             try {

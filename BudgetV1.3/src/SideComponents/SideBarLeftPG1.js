@@ -28,6 +28,7 @@ function SideBarLeftPG1() {
   const Button3 = (e) => {
     updateAccountInfo({CurrentList:e.target.value})
     ChangeList(e.target.value)
+    setIsGraphicVisible({Graphic1:false})
   
   };
   const Button4 = () => {
@@ -38,6 +39,8 @@ function SideBarLeftPG1() {
     
     HandleServer(obj,"Make List")
     ChangeList(newList)
+    changeList("")
+    setIsGraphicVisible({Graphic1:false})
    // Updt(...ListArray, newList)
    
 };
@@ -69,7 +72,7 @@ useEffect(() => {
                     ))}
                 </select>
                 <br></br>
-              <input type='text' onChange={(e) => changeList(e.target.value)}></input>
+              <input type='text' onChange={(e) => changeList(e.target.value)} value={newList}></input>
             <Button handleClick={Button4}>Create New list</Button>
                      
            

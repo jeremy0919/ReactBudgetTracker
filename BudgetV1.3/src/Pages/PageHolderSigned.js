@@ -2,11 +2,13 @@
 import { ListProvider } from '../Context/CurrentList';
 
 import { MyProvider } from '../Context/context';
+import { RenderListProvider } from '../Context/ReRenderList';
 import MainPage from './MainPage';
 function PageHolderSigned() {
   return (
     <div >
       <MyProvider>
+        <RenderListProvider>
       <ListProvider>
         {/*
         {((currPage === 1) || (currPage ===null)) && <PageMain ComponentToRender={Top} props={"Page 1"} LowerGraphics={Bottom} BarLeft={SideBarLeft} BarRight={SideBarLeftPG1}/>}
@@ -20,6 +22,7 @@ function PageHolderSigned() {
   */}
   <MainPage/>
         </ListProvider>
+        </RenderListProvider>
         </MyProvider>
 
     </div>

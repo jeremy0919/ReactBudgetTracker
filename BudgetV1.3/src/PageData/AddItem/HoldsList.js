@@ -1,13 +1,12 @@
 import React from 'react';
-import { useMyContext } from '../../Context/context';
 import HandleServer from '../../components/HandleServer';
 import { useListContext } from '../../Context/CurrentList';
 import { useCookies } from 'react-cookie';
-
+import { useRenderContext } from '../../Context/ReRenderList';
 function HoldsList(props) {
   const {CurrentList} = useListContext();
   const [cookies] = useCookies(['UserData']);
-  const { setIsGraphicVisible } = useMyContext ();
+  const {amRendering, setAmRendering} = useRenderContext();
   const handleUpdateList = () => { 
     const obj = {
       Product: props.props.Product,
@@ -16,9 +15,11 @@ function HoldsList(props) {
       GUID: cookies.UserData,
       ListID: CurrentList
     }
-    HandleServer(obj,'Add Item')
-    setIsGraphicVisible({Graphic2: previous => !previous});
-    setIsGraphicVisible({Graphic2: previous => !previous});
+    HandleServer(obj, 'Add Item').then(() => {
+      setAmRendering(!amRendering)
+    }).catch(error => {
+      console.error('Error updating list:', error);
+    });
   };
 
   return (

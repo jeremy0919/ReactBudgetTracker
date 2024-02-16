@@ -288,9 +288,7 @@ app.post('/api/list', async (req, res) => {
     
     const products = JSON.parse(data);
     const filteredProductsByName = products.filter(product => product.GUID === GUID);
-    console.log(listName)
-    console.log(GUID)
-    console.log(filteredProductsByName)
+
     if(filteredProductsByName){
     // Check if ListID is provided in the request query
     if (listName === "All") {
@@ -301,7 +299,7 @@ app.post('/api/list', async (req, res) => {
       return res.json(filteredProducts); // returns filtered list
     } 
     else {
-      return   res.json(filteredProductsByName); // Returns empty list
+      return   res.json(filteredProductsByName); // all
     }
   }
   } catch (error) {

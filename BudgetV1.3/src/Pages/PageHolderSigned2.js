@@ -8,7 +8,7 @@ import UserInfo from './UserInfo';
 import ToDoList from './ToDoList';
 import AboutUs from './AboutUs';
 import Bar from '../SideComponents/Bar';
-
+import CreateTable from '../PageData/Display/CreateTable';
 function PageHolderSigned2() {
   const { currPage } = usePageContext();
 
@@ -23,7 +23,7 @@ function PageHolderSigned2() {
           </>
         );
       case 2:
-        return <BudgetHead />;
+        return <CreateTable />;
       case 3:
         return <DisplLogin />;
       case 4:

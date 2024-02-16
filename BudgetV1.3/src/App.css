@@ -104,10 +104,9 @@ button:hover .Span {
   color: #DEB992;
 }
 .PrintList {
-  flex-direction: row;
+  flex-direction: column;
   list-style-type: none;
   display: flex;
-  flex-direction: row;
   padding-left: 2%;
   padding-right: 2%;
 }

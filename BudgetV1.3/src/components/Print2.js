@@ -2,11 +2,18 @@ import React from 'react';
 import Delete from '../PageData/AddItem/Delete';
 import { useMyContext } from '../Context/context';
 import { useCookies } from 'react-cookie';
+import { useRenderContext } from '../Context/ReRenderList';
 function Print2(props) {
-    const { setIsGraphicVisible } = useMyContext();
+  const { isGraphicVisible } = useMyContext ();
+const {amRendering, setAmRendering} = useRenderContext();
     const printList = props.printList;
     const [cookies] = useCookies(['UserData']);
     const handleClick = async () => {
+      console.log(isGraphicVisible.Graphic2)
+      if(isGraphicVisible.Graphic2){
+        setAmRendering(!amRendering)
+        }
+        /*
         setIsGraphicVisible(previousState => ({
           ...previousState,
           Graphic2: !previousState.Graphic2
@@ -15,6 +22,7 @@ function Print2(props) {
           ...previousState,
           Graphic2: !previousState.Graphic2
         }));
+        */
     };function getCategoryColor(category) {
     switch (category) {
         case 'Groceries':

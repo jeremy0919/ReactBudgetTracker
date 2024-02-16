@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Print from '../../components/Print';
+import { useRenderContext } from '../../Context/ReRenderList';
 import HandleServer from '../../components/HandleServer';
 import { useCookies } from 'react-cookie';
 import { useListContext } from '../../Context/CurrentList';
 import useListTotal from '../../DisplayGraphic/useListTotal';
 import { useAccountContext } from '../../Context/AccountInfo';
+
 function BudgetHead() {
     const [cookie] = useCookies(['UserData']);
+    const {amRendering, setAmRendering} = useRenderContext();
     const [budget, setBudget] = useState(0);
     const [remaining, setRemaining] = useState(0);
     const { CurrentList } = useListContext();
@@ -24,13 +26,15 @@ function BudgetHead() {
         };
 
         fetchData();
-    }, [cookie.UserData, CurrentList, accountInfo.Budget]);
+    }, [cookie.UserData, CurrentList, accountInfo.Budget, amRendering]);
 
    
     const categoryTotal = useListTotal("Lists", "Total List");
 
     useEffect(() => {
+        
         const fetchData = async () => {
+            
             try {
                 let totalDeducted = 0;
                 
@@ -39,17 +43,19 @@ function BudgetHead() {
                     if (item[0] === CurrentList) {
                         totalDeducted += item[1];
                     }
+                    console.log(totalDeducted)
                 });
 
                 // Update remaining budget after deducting total
                 setRemaining(budget - totalDeducted);
+              
             } catch (error) {
                 console.error('Error fetching remaining budget:', error);
             }
         };
 
         fetchData();
-    }, [CurrentList, categoryTotal, budget]);
+    }, [CurrentList, categoryTotal, budget, amRendering]);
 
     return (
         <div>

@@ -5,18 +5,20 @@ import { useCookies } from 'react-cookie';
 import HandleServer from '../components/HandleServer';
 import { useListContext } from '../Context/CurrentList';
 import Print2 from '../components/Print2';
+import { useRenderContext } from '../Context/ReRenderList';
 function Bottom() {
     const { isGraphicVisible } = useMyContext();
     const [list, setList] = useState({});
     const [cookies] = useCookies(['UserData']);
     const {CurrentList }= useListContext()
     const [printList, setPrintList] = useState([])
+    const {amRendering} = useRenderContext();
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const obj = {
                     GUID: cookies.UserData,
-                    listName: "All"
+                    listName:CurrentList
                 };
 
     
@@ -31,7 +33,7 @@ function Bottom() {
     
         // Call the async function to fetch data
         fetchData();
-    }, [isGraphicVisible.Graphic1, cookies.UserData]); // Add dependencies to the useEffect hook
+    }, [isGraphicVisible.Graphic1, cookies.UserData, CurrentList, amRendering]); // Add dependencies to the useEffect hook
 
 useEffect(() => {
         
@@ -54,7 +56,7 @@ useEffect(() => {
 
     // Call the async function to fetch data
     fetchData();
-},[isGraphicVisible.Graphic2, cookies.UserData, CurrentList])
+},[isGraphicVisible.Graphic2, cookies.UserData, CurrentList, amRendering])
     return (
         <div className='Bottom'>
             {isGraphicVisible.Graphic1 &&  <DrawGraphic list= {list} />}
