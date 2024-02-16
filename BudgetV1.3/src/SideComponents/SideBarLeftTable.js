@@ -1,20 +1,39 @@
 import React from 'react'
 import Button from '../components/Button'
-
+import { useOrderContext } from '../Context/OrderToRender';
 function SideBarLeftTable() {
- 
+  const {currOrder, setCurrOrder} = useOrderContext();
     const Button1 = () => {
-      alert("Sort by name")
-    
+     if(currOrder==='AlphabeticalAscending'){
+      setCurrOrder('AlphabeticalDescending')
+     }
+     else{
+      setCurrOrder('AlphabeticalAscending')
+     }
     };
     const Button2 = () => {
-        alert("Sort by Price")
+      if(currOrder==='CostAscending'){
+        setCurrOrder('CostDescending')
+       }
+       else{
+        setCurrOrder('CostAscending')
+       }
     };
     const Button3 = () => {
-        alert("Sort by List")
+      if(currOrder==='ListAscending'){
+        setCurrOrder('ListDescending')
+       }
+       else{
+        setCurrOrder('ListAscending')
+       }
     };
     const Button4 = () => {
-        alert("Sort by Category")
+      if(currOrder==='CategoryAscending'){
+        setCurrOrder('CategoryDescending')
+       }
+       else{
+        setCurrOrder('CategoryAscending')
+       }
     };
   return (
     <div>

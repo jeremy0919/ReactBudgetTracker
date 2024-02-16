@@ -3,6 +3,7 @@ import { useAccountContext } from '../../Context/AccountInfo';
 import HandleServer from '../../components/HandleServer';
 import { usePageContext } from '../../Context/RenderPage1';
 import { useCookies } from 'react-cookie';
+import Button from '../../components/Button';
 function DisplLogin() {
   const [cookies, setCookie, removeCookie] = useCookies(['UserData']);
   const [useName, updateUserName] = useState("")
@@ -52,7 +53,7 @@ function DisplLogin() {
     return (
     
       <div>
-          <button onClick={ handleSecondButton } >Sign out</button>
+          <Button  handleClick={handleSecondButton} >Sign out</Button>
       </div>
     )
   }

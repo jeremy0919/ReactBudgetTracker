@@ -39,7 +39,7 @@ function UserInfo() {
                 <div style={{ padding: '20px' }}> {/* Add padding for better spacing */}
                   <div style={{ marginBottom: '20px' }}>
                     <p>
-                      <strong>UserName:</strong> {cookies.UserData}<br />
+                      <strong>UserName:</strong> {cookies.UserData}<br /> {/*either store username in cookie or perfrom a getusername call */}
                       <strong>Language:</strong> {accountInfo.Language}<br />
                       <strong>Email:</strong> {accountInfo.Email}
                     </p>

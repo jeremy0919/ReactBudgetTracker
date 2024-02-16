@@ -18,7 +18,10 @@ function SideBarLeftHolder() {
             return <SideBarLeftPG1 />;
         case 4:
         case 6:
-            return <SideBarRight />;
+            return(<div>
+             <SideBarRight /> ;
+             </div>
+            )
         case 2:        
             return <SideBarLeftTable />;
          

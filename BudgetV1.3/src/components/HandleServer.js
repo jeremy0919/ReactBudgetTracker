@@ -32,6 +32,8 @@ function HandleServer(obj, location) {
            return ServerPost(obj,'api/updateBudget') // obj == username, budget
         case "Get Budget"://returns a given users budget
            return ServerPost(obj,'api/Getbudget') // obj == username
+        case "Sort List":
+            return ServerPost(obj, 'api/SortedList')
         default:
             return null
     }

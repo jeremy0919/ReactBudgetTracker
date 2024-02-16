@@ -308,6 +308,58 @@ app.post('/api/list', async (req, res) => {
   }
 });
 
+app.post('/api/SortedList', async (req, res) => {
+  try {
+    const { GUID, Method} = req.body.obj;// Assuming you're sending the index of the object to delete
+    const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
+    console.log(GUID)
+    console.log(Method)
+    const products = JSON.parse(data);
+    const filteredProductsByName = products.filter(product => product.GUID === GUID);
+
+    if(filteredProductsByName){
+    // Check if ListID is provided in the request query
+      if(Method === "AlphabeticalAscending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => a.Product.localeCompare(b.Product));
+        return res.json(sortedProducts); 
+      }
+      if(Method === "CostAscending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => parseFloat(a.Cost) - parseFloat(b.Cost));
+        return res.json(sortedProducts); 
+      }
+      if(Method === "AlphabeticalDescending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => b.Product.localeCompare(a.Product));
+        return res.json(sortedProducts); 
+      }
+      if(Method === "CostDescending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => parseFloat(b.Cost) - parseFloat(a.Cost));
+        return res.json(sortedProducts); 
+      }
+      if(Method === "ListAscending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => a.ListID.localeCompare(b.ListID));
+        return res.json(sortedProducts); 
+      }
+      if(Method === "ListDescending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => b.ListID.localeCompare(a.ListID));
+        return res.json(sortedProducts); 
+      }
+      if(Method === "CategoryAscending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => a.Category.localeCompare(b.Category));
+        return res.json(sortedProducts); 
+      }
+      if(Method === "CategoryDescending"){
+        const sortedProducts = filteredProductsByName.sort((a, b) => b.Category.localeCompare(a.Category));
+        return res.json(sortedProducts); 
+      }
+   
+    // returns filtered list
+    } 
+  } catch (error) {
+    console.error('Error reading products file:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 app.get('/api/products', async (req, res) => {
   try {
