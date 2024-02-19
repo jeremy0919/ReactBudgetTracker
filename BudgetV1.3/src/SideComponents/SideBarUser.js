@@ -1,9 +1,10 @@
 import React from 'react'
 import Button from '../components/Button'
-
+import { usePageContext } from '../Context/RenderPage1';
 function SideBarUser() {
+  const {setCurrPage} = usePageContext();
     const editUserDetails = () => {
-        alert("create new page maybe? havent decided yet")
+        setCurrPage(7)
     }
   return (
     <div>

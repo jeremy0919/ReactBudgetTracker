@@ -91,6 +91,54 @@ app.post('/api/findUser', async (req, res) => { // changed from get to post, mig
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+app.post('/api/ReturnUser', async (req, res) => { 
+  try {
+    const data = await fs.readFile('users.json', 'utf8');
+    const USERS = JSON.parse(data);
+    const { GUID } = req.body.obj;
+    console.log(GUID)
+    const foundAccount = USERS.find(user => user.GUID === GUID);
+    console.log(foundAccount)
+    if (foundAccount) {
+      return res.status(200).json(foundAccount);
+    } else {
+      return res.status(404).json({ error: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error reading users file:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.post('/api/ModifyUser', async (req, res) => { 
+  try {
+    const data = await fs.readFile('users.json', 'utf8');
+    const USERS = JSON.parse(data);
+    const { UserName, Password, GUID, Email, Language, Budget } = req.body.obj;
+
+    const foundAccountIndex = USERS.findIndex(user => user.GUID === GUID);
+
+    if (foundAccountIndex !== -1) { // user found
+      // Update user information
+      USERS[foundAccountIndex].Budget = Budget;
+      USERS[foundAccountIndex].UserName = UserName;
+      USERS[foundAccountIndex].Password = Password;
+      USERS[foundAccountIndex].Email = Email;
+      USERS[foundAccountIndex].Language = Language;
+
+      // Write updated data back to the file
+      await fs.writeFile('users.json', JSON.stringify(USERS, null, 2));
+
+      return res.status(200).json({ message: 'User information updated successfully' });
+    } else {
+      return res.status(404).json({ error: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error reading users file:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 app.post('/api/updateBudget', async (req, res) => {
   try {
     const { GUID, budget } = req.body.obj;

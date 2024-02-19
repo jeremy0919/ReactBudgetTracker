@@ -34,6 +34,10 @@ function HandleServer(obj, location) {
            return ServerPost(obj,'api/Getbudget') // obj == username
         case "Sort List":
             return ServerPost(obj, 'api/SortedList')
+        case "Get Info User":
+            return ServerPost(obj,'api/ReturnUser')
+        case "Update User Info":
+            return ServerPost(obj,'api/ModifyUser')
         default:
             return null
     }

@@ -3,6 +3,7 @@ import { usePageContext } from '../Context/RenderPage1';
 import SideBarUser from './SideBarUser';
 import SideBarLeft from './SideBarLeft';
 import DisplLogin from '../PageData/LogIn/DisplLogin';
+import SideBar from './SideBar';
 function SideBarRightHolder() {
   const { currPage } = usePageContext();
 
@@ -13,7 +14,6 @@ function SideBarRightHolder() {
         case 2:
         case 3:
         case 5:
-        case 7:
         case 8:
             return <SideBarLeft />;
             
@@ -24,6 +24,8 @@ function SideBarRightHolder() {
             <DisplLogin/>
             </div>
            )
+           case 7:
+            return <SideBar/>
       default:
         return null;
     }
