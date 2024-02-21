@@ -37,12 +37,13 @@ function Tr({ data }) {
       {keys.map((key, index) => (
         <Td key={index} cell={data[key]} />
       ))}
+          <td>
+                <button onClick={() => onEditClick()}>Edit</button>
+            </td>
                   <td>
                 <button onClick={() => onDeleteClick()}>Delete</button>
             </td>
-            <td>
-                <button onClick={() => onEditClick()}>Edit</button>
-            </td>
+        
     </tr>
   );
 }
