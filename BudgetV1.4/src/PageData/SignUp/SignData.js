@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie';
 import { v4 as uuidv4 } from 'uuid';
 function SignData() {
     const [Language, setSelectedOption] = useState('English');
-    const [cookies, setCookie, removeCookie] = useCookies(['UserData']);
+    const [setCookie] = useCookies(['UserData']);
     const guid = uuidv4();
     const handleDropdownChange = (event) => {
         setSelectedOption(event.target.value);
@@ -36,7 +36,7 @@ function SignData() {
         const temp = await HandleServer(obj, "New User");
         console.log(temp)
         if (temp.status === 200|| temp.status === 201) {
-          updateAccountInfo({ userName: useName, Email: Email, Language: Language, Signedin:true });
+          updateAccountInfo({ UserName: useName, Email: Email, Language: Language, Signedin:true });
           handleSetCookie()
           setCurrPage(1)
           

@@ -13,16 +13,6 @@ const {amRendering, setAmRendering} = useRenderContext();
       if(isGraphicVisible.Graphic2){
         setAmRendering(!amRendering)
         }
-        /*
-        setIsGraphicVisible(previousState => ({
-          ...previousState,
-          Graphic2: !previousState.Graphic2
-        }));
-        setIsGraphicVisible(previousState => ({
-          ...previousState,
-          Graphic2: !previousState.Graphic2
-        }));
-        */
     };function getCategoryColor(category) {
     switch (category) {
         case 'Groceries':

@@ -10,11 +10,11 @@ function AboutUs({Bar}) {
        
     
        <Bar></Bar>
-       <div style={{ display: 'flex', flex: '1 1 auto' }}> {/* This flex container holds the main content */}
-       <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> {/* 1/8 of the screen for SideBar */}
+       <div style={{ display: 'flex', flex: '1 1 auto' }}> 
+       <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> 
             <SideBar />
           </div>
-          <div style={{ flex: '7 1 auto' }}> {/* 7/8 of the screen for LowerGraphics */}
+          <div style={{ flex: '7 1 auto' }}>
            <h1>
                 About Me
            </h1>

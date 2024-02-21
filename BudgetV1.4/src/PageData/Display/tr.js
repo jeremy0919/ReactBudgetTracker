@@ -1,11 +1,17 @@
 // Tr.js
 import React from 'react';
 import Td from './td';
+import Button from '../../components/Button';
 
 function Tr({ data }) {
   // Extract the keys of the object excluding 'GUID'
   const keys = Object.keys(data).filter(key => key !== 'GUID');
-
+  const onDeleteClick = () =>{
+    alert("delete")
+  }
+  const onEditClick = () =>{
+    alert("Edit")
+  }
   function getCategoryColor(category) {
     switch (category) {
         case 'Groceries':
@@ -31,6 +37,12 @@ function Tr({ data }) {
       {keys.map((key, index) => (
         <Td key={index} cell={data[key]} />
       ))}
+                  <td>
+                <button onClick={() => onDeleteClick()}>Delete</button>
+            </td>
+            <td>
+                <button onClick={() => onEditClick()}>Edit</button>
+            </td>
     </tr>
   );
 }

@@ -1,5 +1,5 @@
 import ServerPost from '../CustomeHooks/ServerPost'
-import ServerGet from '../CustomeHooks/ServerGet'
+//import ServerGet from '../CustomeHooks/ServerGet'
 function HandleServer(obj, location) {
     switch (location){
         case "delete": // deletes an item
@@ -38,6 +38,9 @@ function HandleServer(obj, location) {
             return ServerPost(obj,'api/ReturnUser')
         case "Update User Info":
             return ServerPost(obj,'api/ModifyUser')
+        case "Get User Name":
+            return ServerPost(obj,'api/GetUserName')
+            
         default:
             return null
     }

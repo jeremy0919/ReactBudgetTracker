@@ -63,8 +63,7 @@ function EditPersonalInfo() {
         console.error("Error occurred while communicating with server:", error);
         // Handle error gracefully
     }
-}; // create server call to get account info
-// create server call to modify account json
+}; 
   return (
     <div >
         <form onSubmit={handleSubmit} className='SignUp'>

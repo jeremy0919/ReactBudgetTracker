@@ -34,6 +34,7 @@ function DisplLogin() {
   const handleSecondButton = () =>{
     updateAccountInfo({UserName: "Guest", Email: "unknown", Language: "English",Signedin: false})
     removeCookie('UserData')
+    setCurrPage(5)
   }
   if(cookies.UserData===undefined){
   return (

@@ -138,6 +138,30 @@ app.post('/api/ModifyUser', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.post('/api/GetUserName', async (req, res) => { 
+  try {
+    const data = await fs.readFile('users.json', 'utf8');
+    const USERS = JSON.parse(data);
+    const { GUID } = req.body.obj;
+
+    const foundAccountIndex = USERS.findIndex(user => user.GUID === GUID);
+
+    if (foundAccountIndex !== -1) { // user found
+
+     const data = USERS[foundAccountIndex].UserName;
+
+
+      // Write updated data back to the file
+      return res.status(200).json({ data });
+    } else {
+      return res.status(404).json({ error: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error reading users file:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 app.post('/api/updateBudget', async (req, res) => {
   try {

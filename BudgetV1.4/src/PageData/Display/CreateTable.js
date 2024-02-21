@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useMyContext } from '../../Context/context';
 import { useCookies } from 'react-cookie';
 import HandleServer from '../../components/HandleServer';
 import { useListContext } from '../../Context/CurrentList';
-import { useRenderContext } from '../../Context/ReRenderList';
 import { useOrderContext } from '../../Context/OrderToRender';
 import Tr from './tr';
 function CreateTable() {
@@ -11,7 +9,7 @@ function CreateTable() {
     const [cookies] = useCookies(['UserData']);
     const {CurrentList }= useListContext()
     const [printList, setPrintList] = useState([])
-    const {currOrder, setCurrOrder} = useOrderContext();
+    const {currOrder} = useOrderContext();
 useEffect(() => {
         
     const fetchData = async () => {
@@ -44,6 +42,8 @@ useEffect(() => {
           <th>Cost</th>
           <th>Category</th>
           <th>List Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>

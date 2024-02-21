@@ -9,7 +9,7 @@ function UserInfo() {
     const {accountInfo} = useAccountContext()
     const [list, setList] = useState({});
     const [renderG, UpdateRender] = useState(false);
-
+   
     const [cookies] = useCookies(['UserData']);
     useEffect(() => {
         const fetchData = async () => {
@@ -28,7 +28,7 @@ function UserInfo() {
             } catch (error) {
                 console.error('Error fetching list:', error);
             }
-        };
+        }; 
     
         // Call the async function to fetch data
         fetchData();
@@ -39,11 +39,13 @@ function UserInfo() {
                 <div style={{ padding: '20px' }}> {/* Add padding for better spacing */}
                   <div style={{ marginBottom: '20px' }}>
                     <p>
-                      <strong>UserName:</strong> {cookies.UserData}<br /> {/*either store username in cookie or perfrom a getusername call */}
+                  {/*either store username in cookie or perfrom a getusername call */}
+                      <strong>UserName:</strong> {accountInfo.UserName}<br /> {/*either store username in cookie or perfrom a getusername call */}
+                      
                       <strong>Language:</strong> {accountInfo.Language}<br />
                       <strong>Email:</strong> {accountInfo.Email}
                     </p>
-                    <p>Look at EditPersonalInfo.js</p>
+                    <p>Use editPersonalJs account info call in context assigner to update Account state</p>
               
                   </div>
             

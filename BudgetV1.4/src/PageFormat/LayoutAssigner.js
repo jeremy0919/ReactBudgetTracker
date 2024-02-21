@@ -1,9 +1,9 @@
 import React from 'react';
 import { MyProvider } from '../Context/context';
 import Bar from '../SideComponents/Bar';
-import PageHolderSigned2 from './PageHolderSigned2';
-import SideBarLeftHolder from '../SideComponents/SideBarLeftHolder';
-import SideBarRightHolder from '../SideComponents/SideBarRightHolder';
+import PageHolderSigned2 from '../Pages/PageHolderSigned2';
+import SideBarLeftHolder from './SideBarLeftHolder';
+import SideBarRightHolder from './SideBarRightHolder';
 function MainPage() {
   return (
     <div>
