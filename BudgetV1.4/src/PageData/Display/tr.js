@@ -1,7 +1,6 @@
 // Tr.js
 import React from 'react';
 import Td from './td';
-import Button from '../../components/Button';
 
 function Tr({ data }) {
   // Extract the keys of the object excluding 'GUID'
