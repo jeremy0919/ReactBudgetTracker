@@ -51,7 +51,9 @@ useEffect(() => {
           <Tr key={index} data={item} />
         ))}
       </tbody>
-      <tfoot>{/* Your table footer content here */}</tfoot>
+      <tfoot>
+        
+      </tfoot>
     </table>
   )}
 </div>

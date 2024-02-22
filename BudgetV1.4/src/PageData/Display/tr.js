@@ -1,12 +1,13 @@
 // Tr.js
 import React from 'react';
 import Td from './td';
-
+import HandleServer from '../../components/HandleServer';
+import trashcan from '../../images/trashCan.png'
 function Tr({ data }) {
   // Extract the keys of the object excluding 'GUID'
   const keys = Object.keys(data).filter(key => key !== 'GUID');
   const onDeleteClick = () =>{
-    alert("delete")
+    
   }
   const onEditClick = () =>{
     alert("Edit")
