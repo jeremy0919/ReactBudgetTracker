@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import useListTotal from '../../DisplayGraphic/useListTotal';
 import TrashCan from "../../images/trashCan.png";
 import { useCookies } from 'react-cookie';
 import HandleServer from '../../components/HandleServer';
 import { usePageContext } from '../../Context/RenderPage1';
+
 function PrintTotal(props) {
   const {currPage, setCurrPage} = usePageContext()  
   const arr = useListTotal(props.Server1, props.Server2);
   const [cookies] = useCookies(['UserData']);
+  const [isOpen, setIsOpen] = useState(false);
+
+    const openPopUp = () => {
+        setIsOpen(true);
+    }
+
+    const closePopUp = () => {
+        setIsOpen(false);
+    }
+
   const handleDeleteItem = (index) => {
    const obj = {
       GUID: cookies.UserData,
@@ -30,7 +41,7 @@ function PrintTotal(props) {
         {arr.map((item, index) => (
           <li key={index} style={{ display: 'flex', alignItems: 'center' }}>
             {props.Server1 !== "Category Names" && (
-              <button className='OtherButtonImage' onClick={() => handleDeleteItem(item[0])}>
+              <button className='OtherButtonImage' onClick={openPopUp}>
                 <img src={TrashCan} alt="Delete" className='OtherButton'/>
               </button>
             )}
@@ -38,6 +49,18 @@ function PrintTotal(props) {
           </li>
         ))}
       </ul>
+      {isOpen && (
+                <div className="popup">
+                    <div style={{ backgroundColor: 'white', borderRadius: '10px', width:'25%', height:'24%', boxShadow:' 0px 0px 10px 0px rgba(0,0,0,0.5)'}} >
+                    <button style={{position:'absolute', top:'37%', right:'38%'}} onClick={closePopUp}>X</button>
+                        <p>This is a pop-up with buttons!</p>
+                        <button onClick={closePopUp}>Delete List</button>
+                        <button onClick={closePopUp}>Empty List</button>
+                        <button onClick={closePopUp}>Delete All</button>
+                        {/* Add more buttons as needed */}
+                    </div>
+                </div>
+            )}
     </div>
   );
 }
