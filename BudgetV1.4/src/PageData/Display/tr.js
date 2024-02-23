@@ -2,15 +2,22 @@
 import React from 'react';
 import Td from './td';
 import HandleServer from '../../components/HandleServer';
-import trashcan from '../../images/trashCan.png'
-function Tr({ data }) {
+function Tr({ data }, {GUID}) {
   // Extract the keys of the object excluding 'GUID'
   const keys = Object.keys(data).filter(key => key !== 'GUID');
-  const onDeleteClick = () =>{
-    
+  const onDeleteClick = () =>{ // I bet you I can add in the delete File
+    const obj ={
+      GUID:GUID,
+      productGUID: data.productGUID
+    }
+    HandleServer("delete", obj)
   }
   const onEditClick = () =>{
-    alert("Edit")
+    const obj ={
+      GUID:GUID,
+      productGUID: data.productGUID
+    }
+    HandleServer("Edit Product", obj)
   }
   function getCategoryColor(category) {
     switch (category) {

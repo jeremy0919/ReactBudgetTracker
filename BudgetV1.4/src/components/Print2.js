@@ -41,7 +41,7 @@ const {amRendering, setAmRendering} = useRenderContext();
           Product: {item.Product}, 
           Cost: {item.Cost}, 
           Category: {item.Category}
-          <Delete obj={{ GUID: cookies.UserData, Product: item.Product, Cost: item.Cost, Category: item.Category }} handleUpdateList={handleClick} style={{ justifyContent: "right" }} />
+          <Delete obj={{ GUID: cookies.UserData, productGUID:item.productGUID }} handleUpdateList={handleClick} style={{ justifyContent: "right" }} />
         </p>
       </li>
     ))}

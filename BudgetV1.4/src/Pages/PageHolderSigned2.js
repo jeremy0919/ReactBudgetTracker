@@ -26,7 +26,7 @@ function PageHolderSigned2() {
       case 2:
         return <CreateTable />;
       case 3:
-        return <DisplLogin />;
+        return <AboutUs  Bar={Bar}  />;
       case 4:
       case 6:
         return <UserInfo />;

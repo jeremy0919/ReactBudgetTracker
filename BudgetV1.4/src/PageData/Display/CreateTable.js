@@ -48,7 +48,7 @@ useEffect(() => {
       </thead>
       <tbody>
         {printList.map((item, index) => (
-          <Tr key={index} data={item}  />
+          <Tr key={index} data={item} GUID={cookies.UserData} />
         ))}
       </tbody>
       <tfoot>

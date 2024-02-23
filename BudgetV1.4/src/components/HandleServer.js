@@ -40,7 +40,17 @@ function HandleServer(obj, location) {
             return ServerPost(obj,'api/ModifyUser')
         case "Get User Name":
             return ServerPost(obj,'api/GetUserName')
-            
+        case "Delete list and items":
+            return ServerPost(obj,'api/')
+        case "Delete list and remove items from list":
+            return ServerPost(obj,'api/')
+        case "Remove list name from items":
+            return ServerPost(obj,'api/')
+        case "Delete items in list":
+            return ServerPost(obj,'api/')
+        case "Edit Product":
+            return ServerPost(obj,'api/')
+         
         default:
             return null
     }

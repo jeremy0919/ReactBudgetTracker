@@ -18,13 +18,42 @@ function PrintTotal(props) {
     const closePopUp = () => {
         setIsOpen(false);
     }
-
-  const handleDeleteItem = (index) => {
+    const handleDeleteItemsInList = (index) => {
+      const obj = { // object needs list name and GUID 
+         GUID: cookies.UserData,
+         listName: index
+      }
+      HandleServer(obj, "Delete items in list")
+      if(currPage ===6){
+       setCurrPage(4)
+      }
+   
+      if(currPage ===4){
+       setCurrPage(6)
+      }
+   
+     };
+    const handleEmptyList = (index) => {
+      const obj = { // object needs list name and guid
+         GUID: cookies.UserData,
+         listName: index
+      }
+      HandleServer(obj, "Remove list name from items")
+      if(currPage ===6){
+       setCurrPage(4)
+      }
+   
+      if(currPage ===4){
+       setCurrPage(6)
+      }
+   
+     };
+  const handleDeleteList = (index) => {//object needs list name and userID
    const obj = {
       GUID: cookies.UserData,
       listName: index
    }
-   HandleServer(obj, "Delete List")
+   HandleServer(obj, "Delete list and remove items from list")
    if(currPage ===6){
     setCurrPage(4)
    }
@@ -34,7 +63,21 @@ function PrintTotal(props) {
    }
 
   };
-
+  const handleDeleteAll = (index) => { // object needs listname and userID
+    const obj = {
+       GUID: cookies.UserData,
+       listName: index
+    }
+    HandleServer(obj, "Delete list and items")
+    if(currPage ===6){
+     setCurrPage(4)
+    }
+ 
+    if(currPage ===4){
+     setCurrPage(6)
+    }
+ 
+   };
   return (
     <div>
       <ul style={{ listStyleType: 'none', padding: 0 }}> 
@@ -54,9 +97,10 @@ function PrintTotal(props) {
                     <div style={{ backgroundColor: 'white', borderRadius: '10px', width:'25%', height:'24%', boxShadow:' 0px 0px 10px 0px rgba(0,0,0,0.5)'}} >
                     <button style={{position:'absolute', top:'37%', right:'38%'}} onClick={closePopUp}>X</button>
                         <p>This is a pop-up with buttons!</p>
-                        <button onClick={closePopUp}>Delete List</button>
-                        <button onClick={closePopUp}>Empty List</button>
-                        <button onClick={closePopUp}>Delete All</button>
+                        <button onClick={handleDeleteItemsInList}>Delete items in list</button>
+                        <button onClick={handleEmptyList}>Empty List</button>
+                        <button onClick={handleDeleteList}>Delete list but save items</button>
+                        <button onClick={handleDeleteAll}>Delete All</button>
                         {/* Add more buttons as needed */}
                     </div>
                 </div>

@@ -13,7 +13,7 @@ app.use(cors()); // Enable CORS for all routes
 // Create a new product
 app.post('/api/products', async (req, res) => {
   try {
-    const { Product, Cost, Category, GUID, ListID } = req.body.obj;
+    const { Product, Cost, Category, GUID, productGUID, ListID } = req.body.obj;
     console.log(req.body)
     // Read existing products from file
     let products = [];
@@ -25,7 +25,7 @@ app.post('/api/products', async (req, res) => {
     }
 
     // Add the new product
-    const newProduct = { Product, Cost, Category, GUID, ListID };
+    const newProduct = { Product, Cost, Category, GUID, productGUID, ListID };
     products.push(newProduct);
 
     // Write updated products to file
@@ -273,7 +273,7 @@ app.post('/api/getUserList', async (req, res) => { // changed from get to post, 
 
 app.post('/api/delete', async (req, res) => {
   try {
-    const { GUID, Product, Cost, Category } = req.body.obj;
+    const { GUID, productGUID } = req.body.obj;
 
     // Read existing products from file
     let products = [];
@@ -288,9 +288,7 @@ app.post('/api/delete', async (req, res) => {
     const index = products.findIndex((item) => {
       return (
         item.GUID === GUID &&
-        item.Product === Product &&
-        item.Cost === Cost &&
-        item.Category === Category
+        item.productGUID === productGUID
       );
     });
 
@@ -382,7 +380,7 @@ app.post('/api/list', async (req, res) => {
 
 app.post('/api/SortedList', async (req, res) => {
   try {
-    const { GUID, Method} = req.body.obj;// Assuming you're sending the index of the object to delete
+    const { GUID, Method} = req.body.obj;
     const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
     console.log(GUID)
     console.log(Method)
