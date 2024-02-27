@@ -38,6 +38,7 @@ useEffect(() => {
     <table className='Table1'>
       <thead>
         <tr>
+          <th>Select</th>
           <th>Product</th>
           <th>Cost</th>
           <th>Category</th>

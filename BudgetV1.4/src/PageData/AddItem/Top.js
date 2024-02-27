@@ -37,7 +37,7 @@ function Top() {
     
   <label style={{ marginRight: '10px' }}>Product Name:</label>
  <FunctInput handleInput={dispatch} curr="Product" style={{ marginRight: '10px' }} />
-  <label style={{ marginRight: '10px' }}>Cost Name:</label>
+  <label style={{ marginRight: '10px' }}>Cost:</label>
   <FunctInput handleInput={dispatch} curr="Cost" style={{ marginRight: '10px' }} />
   <label style={{ marginRight: '10px' }}>Category Name:</label>
   <select onChange={button3}>

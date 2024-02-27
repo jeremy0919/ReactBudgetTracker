@@ -4,10 +4,68 @@
     "Password": "1234",
     "Email": "jerry",
     "Language": "English",
-    "Budget": "400",
+    "Budget": "500",
+    "list": [
+      "All",
+      "newList",
+      "newerList",
+      "thisList"
+    ],
+    "GUID": "88d7ab78-e9eb-432f-8d07-20c83fdc9377"
+  },
+  {
+    "UserName": "1Jeremy",
+    "Password": "12",
+    "Email": "Jeremy@email.com",
+    "Language": "English",
+    "Budget": 0,
     "list": [
       "All"
     ],
-    "GUID": "88d7ab78-e9eb-432f-8d07-20c83fdc9377"
+    "GUID": "63f3305f-9aa8-473b-99e8-ffacd8ae4658"
+  },
+  {
+    "UserName": "2Jeremy",
+    "Password": "1234",
+    "Email": "Jeremy@students.fresnostate.edu",
+    "Language": "English",
+    "Budget": 0,
+    "list": [
+      "All"
+    ],
+    "GUID": "c31da1ac-9c40-4df8-9bcf-ddaf4c095abb"
+  },
+  {
+    "UserName": "aba",
+    "Password": "aba",
+    "Email": "jer@jer.jer.com",
+    "Language": "English",
+    "Budget": 0,
+    "list": [
+      "All"
+    ],
+    "GUID": "d71cf08e-f5f3-4224-acff-98dd5ab771eb"
+  },
+  {
+    "UserName": "abaa",
+    "Password": "aba",
+    "Email": "jer@jer.jer.com",
+    "Language": "English",
+    "Budget": 0,
+    "list": [
+      "All"
+    ],
+    "GUID": "e877eb97-ddff-45e9-8a77-df8eff6a940d"
+  },
+  {
+    "UserName": "abab",
+    "Password": "1234",
+    "Email": "jer@jer.com",
+    "Language": "English",
+    "Budget": "300",
+    "list": [
+      "All"
+    ],
+    "GUID": "bd6af9e7-0396-497a-8330-44d325af5234"
   }
 ]

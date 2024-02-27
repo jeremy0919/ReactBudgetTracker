@@ -27,7 +27,7 @@ function Bar() {
         <div className='TopBar' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}> 
            <Button handleClick={Button4}>Page 1</Button>
            <Button handleClick={Button3}>Display</Button>
-            <Button handleClick={LogIn}>Log In/Sign up</Button>
+            <Button handleClick={LogIn}>About me</Button>
             <Button handleClick={Button2}>User Info</Button>
         
            

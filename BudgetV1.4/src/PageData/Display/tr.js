@@ -4,7 +4,7 @@ import Td from './td';
 import HandleServer from '../../components/HandleServer';
 import Checkbox from './CheckBox';
 function Tr({ data }, {GUID}) {
-  const keys = Object.keys(data).filter(key => key !== 'GUID');
+  const keys = Object.keys(data).filter(key => key !== 'GUID'&& key!=="productGUID");
   const onDeleteClick = () =>{ // I bet you I can add in the delete File
     const obj ={
       GUID:GUID,

@@ -1,3 +1,10 @@
 [
-
+  {
+    "Product": "Things",
+    "Cost": "12",
+    "Category": "Clothes",
+    "GUID": "88d7ab78-e9eb-432f-8d07-20c83fdc9377",
+    "productGUID": "dfca8ec8-fd45-4710-b5df-d7d105a6d7d7",
+    "ListID": "All"
+  }
 ]

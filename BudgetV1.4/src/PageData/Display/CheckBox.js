@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCheckedContext } from './CheckedItemsContext';
+import { useCheckedContext } from '../../Context/CheckedItems';
 
 const Checkbox = ({ id }) => {
   const { itemsChecked, updateCheckedItems } = useCheckedContext();

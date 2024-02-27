@@ -45,7 +45,6 @@ function UserInfo() {
                       <strong>Language:</strong> {accountInfo.Language}<br />
                       <strong>Email:</strong> {accountInfo.Email}
                     </p>
-                    <p>Use editPersonalJs account info call in context assigner to update Account state</p>
               
                   </div>
             

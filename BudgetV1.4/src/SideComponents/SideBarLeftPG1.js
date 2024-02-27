@@ -8,8 +8,10 @@ import { useMyContext } from '../Context/context';
 function SideBarLeftPG1() {
   const { setIsGraphicVisible } = useMyContext ();
   const {CurrentList, ChangeList} = useListContext();
+  const [errors, setErrors] = useState({  isList:''  }); // State for errors
+
   const {updateAccountInfo} = useAccountContext()
-  const [newList, changeList] = useState()
+  const [newList, changeList] = useState("")
   const [ListArray, Updt] = useState([])
   const [cookies] = useCookies(['UserData']);
   const Button2 = () => {
@@ -32,6 +34,17 @@ function SideBarLeftPG1() {
   
   };
   const Button4 = () => {
+    let formValid = true;
+    const newErrors = { notBlank:"" };
+
+    if (!newList) {
+      newErrors.useName = 'Valid name';
+      formValid = false;
+    }
+
+    if(!formValid){
+      return;
+    }
     const obj= {
       GUID: cookies.UserData,
       NewList:newList
@@ -41,8 +54,6 @@ function SideBarLeftPG1() {
     ChangeList(newList)
     changeList("")
     setIsGraphicVisible({Graphic1:false})
-   // Updt(...ListArray, newList)
-   
 };
 useEffect(() => {
   const fetchData = async () => {
@@ -73,6 +84,7 @@ useEffect(() => {
                 </select>
                 <br></br>
               <input type='text' onChange={(e) => changeList(e.target.value)} value={newList}></input>
+              {errors.notBlank && <div style={{ color: 'red' }}>{errors.notBlank}</div>}
             <Button handleClick={Button4}>Create New list</Button>
                      
            

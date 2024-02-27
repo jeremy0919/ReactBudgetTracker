@@ -8,14 +8,35 @@ function DisplLogin() {
   const [cookies, setCookie, removeCookie] = useCookies(['UserData']);
   const [useName, updateUserName] = useState("")
   const [passWord, updatePassword] = useState("")
-  const {accountInfo, updateAccountInfo} = useAccountContext();
+  const { updateAccountInfo} = useAccountContext();
   const {setCurrPage} = usePageContext();
+  const [errors, setErrors] = useState({ useName: '', passWord: '' }); // State for errors
+
   const handleSetCookie = (GUID) => {
     setCookie('UserData', GUID);
   };
  // const [language, updateLanguage] = useState("")
   const haandleSubmit = async (event) =>{
     event.preventDefault()
+
+      // Validation
+      let formValid = true;
+      const newErrors = { useName: '', passWord: '' };
+  
+      if (!useName) {
+        newErrors.useName = 'Username is required';
+        formValid = false;
+      }
+  
+      if (!passWord) {
+        newErrors.passWord = 'Password is required';
+        formValid = false;
+      }
+  
+      if (!formValid) {
+        setErrors(newErrors);
+        return;
+      }
     const obj = {
       UserName: useName,
       Password: passWord,}
@@ -43,8 +64,12 @@ function DisplLogin() {
         <form onSubmit={haandleSubmit} className='LogIn'>
             <label>User Name: </label>
             <input type='Text' onChange={(e) => {updateUserName(e.target.value)}} ></input>
+            {errors.useName && <div style={{ color: 'red' }}>{errors.useName}</div>}
+
             <label>Password: </label>
             <input type='password'  onChange={(e) => {updatePassword(e.target.value)}}></input>
+            {errors.passWord && <div style={{ color: 'red' }}>{errors.passWord}</div>}
+
             <button type='submit'>Log In</button>
         </form>
     </div>

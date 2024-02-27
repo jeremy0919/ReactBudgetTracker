@@ -8,8 +8,7 @@ function AboutUs({Bar}) {
 
 <MyProvider>
        
-    
-       <Bar></Bar>
+  
        <div style={{ display: 'flex', flex: '1 1 auto' }}> 
        <div style={{ flex: '1 1 auto', maxWidth: '22%' }}> 
             <SideBar />
