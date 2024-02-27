@@ -2,8 +2,7 @@ import React from 'react';
 import { usePageContext } from '../Context/RenderPage1';
 import Top from '../PageData/AddItem/Top';
 import Bottom from '../bottom/Bottom';
-import BudgetHead from '../PageData/budget/BudgetHead';
-import DisplLogin from '../PageData/LogIn/DisplLogin';
+import { CheckedProvider } from '../Context/CheckedItems';
 import UserInfo from './UserInfo';
 import ToDoList from './ToDoList';
 import AboutUs from './AboutUs';
@@ -24,7 +23,11 @@ function PageHolderSigned2() {
           </>
         );
       case 2:
-        return <CreateTable />;
+        return<> 
+        <CheckedProvider>
+        <CreateTable />
+        </CheckedProvider>
+        </>
       case 3:
         return <AboutUs  Bar={Bar}  />;
       case 4:

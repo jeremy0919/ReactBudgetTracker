@@ -101,7 +101,6 @@ function PrintTotal(props) {
                         <button onClick={handleEmptyList}>Empty List</button>
                         <button onClick={handleDeleteList}>Delete list but save items</button>
                         <button onClick={handleDeleteAll}>Delete All</button>
-                        {/* Add more buttons as needed */}
                     </div>
                 </div>
             )}

@@ -3,7 +3,10 @@ import React from 'react'
 function ToDoList() {
   return (
     <div>
-  
+      <p>do backend for list on userInfo</p>
+      <p>debate how I want checkbox to work within the table </p>
+        <p>- maybe use buttons at the bottom to delete, make editable, hide? </p>
+
       <p>fix table sizing</p>
       <p>make things look nice</p>
       <p>see if table delete can use file delete</p>

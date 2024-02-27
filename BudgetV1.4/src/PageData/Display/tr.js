@@ -2,8 +2,8 @@
 import React from 'react';
 import Td from './td';
 import HandleServer from '../../components/HandleServer';
+import Checkbox from './CheckBox';
 function Tr({ data }, {GUID}) {
-  // Extract the keys of the object excluding 'GUID'
   const keys = Object.keys(data).filter(key => key !== 'GUID');
   const onDeleteClick = () =>{ // I bet you I can add in the delete File
     const obj ={
@@ -40,7 +40,9 @@ function Tr({ data }, {GUID}) {
 
   return (
     <tr className='TableRow1' style={{backgroundColor: getCategoryColor(data.Category)}}>
-   
+                 <td>
+                <Checkbox id={data.productGUID}/>
+              </td>
       {keys.map((key, index) => (
         <Td key={index} cell={data[key]} />
       ))}
