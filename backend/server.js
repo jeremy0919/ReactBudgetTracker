@@ -38,6 +38,10 @@ app.post('/api/products', async (req, res) => {
   }
 });
 
+
+
+
+
 app.post('/api/newUser', async (req, res) => {
   try {
     const { UserName, Password, Email, Language, Budget, GUID } = req.body.obj;
@@ -308,6 +312,43 @@ app.post('/api/delete', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.post('/api/deleteItems', async (req, res) => {
+  try {
+    const { GUID, ListName } = req.body.obj;
+
+    // Read existing products from file
+    let products = [];
+    try {
+      const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
+      products = JSON.parse(data);
+    } catch (error) {
+      console.error('Error reading products file:', error);
+    }
+
+    // Find the index of the product to delete
+    const index = products.findIndex((item) => {
+      return (
+        item.GUID === GUID &&
+        item.ListID === ListName
+      );
+    });
+
+    // Delete the object if found
+    if (index !== -1) {
+      products.splice(index, 1);
+
+      // Write updated products to file
+      await fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+
+      res.status(200).json({ message: 'Product deleted successfully' });
+    } else {
+      res.status(404).json({ error: 'Product not found' });
+    }
+  } catch (error) {
+    console.error('Error deleting product:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 app.post('/api/DeleteList', async (req, res) => {
   try {
     const { GUID, listName } = req.body.obj;
@@ -347,6 +388,47 @@ app.post('/api/DeleteList', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+app.post('/api/RemoveList', async (req, res) => {
+  try {
+    const { GUID, ListName } = req.body.obj;
+
+    // Read existing products from file
+    let products = [];
+    try {
+      const data = await fs.readFile(PRODUCTS_FILE, 'utf8');
+      products = JSON.parse(data);
+    } catch (error) {
+      console.error('Error reading products file:', error);
+    }
+
+    // Find the product with the matching GUID and ListID
+    const productIndex = products.findIndex((item) => {
+      return (
+        item.GUID === GUID &&
+        item.ListID === ListName
+      );
+    });
+
+    // Update the ListID of the product if found
+    if (productIndex !== -1) {
+      // Update the ListID to 'All'
+      products[productIndex].ListID = 'All';
+
+      // Write updated products to file
+      await fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 2));
+
+      res.status(200).json({ message: 'Product list updated successfully' });
+    } else {
+      res.status(404).json({ error: 'Product not found' });
+    }
+  } catch (error) {
+    console.error('Error updating product list:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 
 
 

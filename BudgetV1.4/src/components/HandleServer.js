@@ -41,13 +41,34 @@ function HandleServer(obj, location) {
         case "Get User Name":
             return ServerPost(obj,'api/GetUserName')
         case "Delete list and items":
-            return ServerPost(obj,'api/')
+            Promise.all([
+                ServerPost(obj, 'api/deleteItems'),
+                ServerPost(obj, 'api/DeleteList')
+            ]).then(responses => {
+                // Handle responses if needed
+                console.log("Both requests completed successfully", responses);
+            }).catch(error => {
+                // Handle errors from either request
+                console.error("An error occurred:", error);
+            });
+            return null; // or loading indicator if needed
+        
         case "Delete list and remove items from list":
-            return ServerPost(obj,'api/')
+            Promise.all([
+                ServerPost(obj, 'api/RemoveList'),
+                ServerPost(obj, 'api/DeleteList')
+            ]).then(responses => {
+                // Handle responses if needed
+                console.log("Both requests completed successfully", responses);
+            }).catch(error => {
+                // Handle errors from either request
+                console.error("An error occurred:", error);
+            });
+            return null; // or loading indicator if needed
         case "Remove list name from items":
-            return ServerPost(obj,'api/')
+            return  ServerPost(obj, 'api/RemoveList')
         case "Delete items in list":
-            return ServerPost(obj,'api/')
+            return  ServerPost(obj, 'api/deleteItems')
         case "Edit Product":
             return ServerPost(obj,'api/')
          
