@@ -67,5 +67,21 @@
       "All"
     ],
     "GUID": "bd6af9e7-0396-497a-8330-44d325af5234"
+  },
+  {
+    "UserName": "jer",
+    "Password": "123",
+    "Email": "jer123@gmail.com",
+    "Language": "English",
+    "Budget": 1000,
+    "list": [
+      "All",
+      "notEmpty",
+      "test1",
+      "test2",
+      "test3",
+      "test4"
+    ],
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5"
   }
 ]

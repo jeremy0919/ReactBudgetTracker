@@ -4,7 +4,9 @@ import { useListContext } from '../../Context/CurrentList';
 import { useCookies } from 'react-cookie';
 import { useRenderContext } from '../../Context/ReRenderList';
 import { v4 as uuidv4 } from 'uuid';
+import { useClearProvider } from '../../Context/clearInput';
 function HoldsList(props) {
+  const { shouldClear, updateClear} = useClearProvider();
   const {CurrentList} = useListContext();
   const [cookies] = useCookies(['UserData']);
   const {amRendering, setAmRendering} = useRenderContext();
@@ -23,6 +25,8 @@ function HoldsList(props) {
     }).catch(error => {
       console.error('Error updating list:', error);
     });
+    updateClear(!shouldClear);
+    console.log(shouldClear);
   };
 
   return (

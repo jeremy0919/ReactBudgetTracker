@@ -9,6 +9,7 @@ import AboutUs from './AboutUs';
 import Bar from '../SideComponents/Bar';
 import CreateTable from '../PageData/Display/CreateTable';
 import EditPersonalInfo from './EditPersonalInfo';
+import { ClearInputProvider } from '../Context/clearInput';
 function PageHolderSigned2() {
   const { currPage } = usePageContext();
 
@@ -18,8 +19,10 @@ function PageHolderSigned2() {
       case null:
         return (
           <>
+          <ClearInputProvider>
             <Top />
             <Bottom />
+            </ClearInputProvider>
           </>
         );
       case 2:

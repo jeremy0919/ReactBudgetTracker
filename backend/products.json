@@ -6,5 +6,85 @@
     "GUID": "88d7ab78-e9eb-432f-8d07-20c83fdc9377",
     "productGUID": "dfca8ec8-fd45-4710-b5df-d7d105a6d7d7",
     "ListID": "All"
+  },
+  {
+    "Product": "product1",
+    "Cost": "20",
+    "Category": "Groceries",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "2bcc497b-6996-4c0f-b83b-538c9871c7d2",
+    "ListID": "All"
+  },
+  {
+    "Product": "test1",
+    "Cost": "20",
+    "Category": "Resteraunts",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "3106f312-d3e9-4438-b77b-f48263cca919",
+    "ListID": "All"
+  },
+  {
+    "Product": "test1",
+    "Cost": "20",
+    "Category": "Resteraunts",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "76047ef8-f507-4439-be28-c2e6b53c4226",
+    "ListID": "All"
+  },
+  {
+    "Product": "",
+    "Cost": 0,
+    "Category": "Groceries",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "cbc9830e-2cd4-4463-a560-444aa8feebfa",
+    "ListID": "All"
+  },
+  {
+    "Product": "test2",
+    "Cost": "100",
+    "Category": "LivingExpenses",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "db106a04-88c8-4ce3-a8a0-178bcd4e4ec7",
+    "ListID": "All"
+  },
+  {
+    "Product": "test2",
+    "Cost": "100",
+    "Category": "LivingExpenses",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "5e7b49e2-5916-435c-a3dc-6920317180e9",
+    "ListID": "All"
+  },
+  {
+    "Product": "test3",
+    "Cost": 0,
+    "Category": "Groceries",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "d6492c23-d13b-43e6-aa0a-568604b2e7d7",
+    "ListID": "All"
+  },
+  {
+    "Product": "test3",
+    "Cost": 0,
+    "Category": "Groceries",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "6edaeede-045d-4897-be23-25c2af3a437d",
+    "ListID": "All"
+  },
+  {
+    "Product": "test4",
+    "Cost": "200",
+    "Category": "Clothes",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "db371538-bf7f-44b2-9386-4e928c4ec55a",
+    "ListID": "All"
+  },
+  {
+    "Product": "test5",
+    "Cost": "200",
+    "Category": "Resteraunts",
+    "GUID": "862b160e-c913-413d-a472-5fc87712ccf5",
+    "productGUID": "536e31ea-0647-4ed3-b880-bb81cb6f914d",
+    "ListID": "All"
   }
 ]
